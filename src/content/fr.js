@@ -54,6 +54,39 @@ const fr = {
       { title: 'Suivi en temps réel', description: "Un accès permanent à l'évolution de vos investissements." },
     ],
   },
+  contact: {
+    eyebrow: 'Contact',
+    title: 'Parlons de votre avenir financier',
+    subtitle: "Une question, un projet ? Notre équipe vous répond sous 24h.",
+    infos: [
+      { label: 'Adresse', value: '12 Rue de la Bourse, 75002 Paris' },
+      { label: 'Téléphone', value: '+33 1 23 45 67 89' },
+      { label: 'Email', value: 'contact@finansys.example' },
+    ],
+    form: {
+      nameLabel: 'Nom complet',
+      emailLabel: 'Email',
+      phoneLabel: 'Téléphone',
+      messageLabel: 'Message',
+      submitLabel: 'Envoyer le message',
+      successMessage: 'Merci ! Votre message a bien été envoyé, nous vous répondrons rapidement.',
+    },
+  },
+  footer: {
+    tagline: 'Votre partenaire de confiance pour une gestion financière sereine et performante.',
+    columnsTitle: 'Navigation',
+    socialTitle: 'Suivez-nous',
+    social: [
+      { label: 'LinkedIn', href: '#' },
+      { label: 'Facebook', href: '#' },
+      { label: 'Instagram', href: '#' },
+    ],
+    legalLinks: [
+      { label: 'Mentions légales', href: '#' },
+      { label: 'Politique de confidentialité', href: '#' },
+    ],
+    copyright: '© 2026 FinanSys. Tous droits réservés.',
+  },
 };
 
 export default fr;
