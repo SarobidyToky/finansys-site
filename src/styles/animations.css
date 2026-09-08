@@ -1,0 +1,66 @@
+@keyframes riseUp {
+  0% { transform: scaleY(0); opacity: 0; }
+  100% { transform: scaleY(1); opacity: 1; }
+}
+
+@keyframes drawPath {
+  0% { stroke-dashoffset: 1; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-fade-up {
+  animation: fadeSlideUp 0.7s ease forwards;
+}
+
+.chart-bar {
+  transform-origin: bottom;
+  transform: scaleY(0);
+  animation: riseUp 0.7s ease forwards;
+}
+
+.chart-path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: drawPath 1.3s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.chart-area {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 1.3s;
+}
+
+.chart-arrow-tip {
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+  animation-delay: 1.7s;
+}
+
+.float-badge {
+  animation: floatY 3.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up, .chart-bar, .chart-path, .chart-area, .chart-arrow-tip, .float-badge {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+}
