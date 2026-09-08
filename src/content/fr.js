@@ -40,6 +40,20 @@ const fr = {
       { icon: 'percent', title: 'Optimisation fiscale', description: 'Des solutions pour réduire votre charge fiscale en toute légalité.' },
     ],
   },
+  avantages: {
+    eyebrow: 'Pourquoi FinanSys',
+    title: 'Des avantages qui font la différence',
+    stats: [
+      { value: 500, suffix: '+', label: 'clients accompagnés' },
+      { value: 10, suffix: ' ans', label: "d'expérience sur le marché" },
+    ],
+    items: [
+      { title: 'Accompagnement personnalisé', description: 'Un conseiller dédié qui connaît votre situation en profondeur.' },
+      { title: 'Transparence totale', description: 'Aucun frais caché, des rapports clairs à chaque étape.' },
+      { title: 'Expertise reconnue', description: "Une équipe certifiée avec des années d'expérience dans le secteur." },
+      { title: 'Suivi en temps réel', description: "Un accès permanent à l'évolution de vos investissements." },
+    ],
+  },
 };
 
 export default fr;
