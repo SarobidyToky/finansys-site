@@ -24,18 +24,20 @@ const fr = {
     title: 'Une gestion financière pensée pour votre réussite',
     text: "Depuis sa création, FinanSys accompagne particuliers et entreprises dans la construction d'une stratégie financière solide et durable. Notre vision : rendre la gestion financière accessible, transparente et efficace pour tous.",
     values: [
-      {
-        title: 'Confiance',
-        description: 'Une relation basée sur la transparence et l\'écoute.',
-      },
-      {
-        title: 'Expertise',
-        description: 'Des conseils rigoureux, fondés sur l\'analyse et l\'expérience.',
-      },
-      {
-        title: 'Résultats',
-        description: 'Des solutions concrètes, orientées vers votre réussite financière.',
-      },
+      { title: 'Confiance', description: 'Une relation basée sur la transparence et l\'écoute.' },
+      { title: 'Expertise', description: 'Des conseils rigoureux, fondés sur l\'analyse et l\'expérience.' },
+      { title: 'Résultats', description: 'Des solutions concrètes, orientées vers votre réussite financière.' },
+    ],
+  },
+  services: {
+    eyebrow: 'Nos services',
+    title: 'Des solutions financières à chaque étape',
+    subtitle: "Que vous soyez particulier ou entreprise, FinanSys propose des services adaptés à vos objectifs.",
+    items: [
+      { icon: 'trending', title: 'Conseil en investissement', description: 'Des stratégies personnalisées pour faire fructifier votre capital.' },
+      { icon: 'shield', title: 'Gestion de patrimoine', description: 'Un accompagnement complet pour protéger et développer vos actifs.' },
+      { icon: 'target', title: 'Planification financière', description: 'Des plans clairs pour atteindre vos objectifs à court et long terme.' },
+      { icon: 'percent', title: 'Optimisation fiscale', description: 'Des solutions pour réduire votre charge fiscale en toute légalité.' },
     ],
   },
 };
