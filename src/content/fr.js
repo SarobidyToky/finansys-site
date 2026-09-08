@@ -19,6 +19,25 @@ const fr = {
     statLabel: 'de croissance moyenne sur 12 mois',
     badge: 'Objectif dépassé',
   },
+  apropos: {
+    eyebrow: 'À propos de FinanSys',
+    title: 'Une gestion financière pensée pour votre réussite',
+    text: "Depuis sa création, FinanSys accompagne particuliers et entreprises dans la construction d'une stratégie financière solide et durable. Notre vision : rendre la gestion financière accessible, transparente et efficace pour tous.",
+    values: [
+      {
+        title: 'Confiance',
+        description: 'Une relation basée sur la transparence et l\'écoute.',
+      },
+      {
+        title: 'Expertise',
+        description: 'Des conseils rigoureux, fondés sur l\'analyse et l\'expérience.',
+      },
+      {
+        title: 'Résultats',
+        description: 'Des solutions concrètes, orientées vers votre réussite financière.',
+      },
+    ],
+  },
 };
 
 export default fr;
