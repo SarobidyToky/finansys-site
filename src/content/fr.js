@@ -10,14 +10,21 @@ const fr = {
     label: 'Nous contacter',
   },
   hero: {
-    title: 'Faites fructifier votre avenir financier',
-    subtitle: "Des stratégies financières intelligentes, un accompagnement humain, des résultats concrets. Découvrez comment FinanSys peut transformer votre gestion financière.",
+    title: 'La comptabilité digitale et durable, pensée pour les entrepreneurs malgaches',
+    subtitle: "Centralisez vos données financières, suivez votre trésorerie et faites-vous accompagner par une équipe qui connaît le contexte malgache.",
     ctaPrimary: 'Prendre rendez-vous',
     ctaSecondary: 'Découvrir nos services',
     statValue: 184,
     statSuffix: '%',
     statLabel: 'de croissance moyenne sur 12 mois',
     badge: 'Objectif dépassé',
+  },
+  stats: {
+    items: [
+      { value: 120, suffix: '+', label: 'clients accompagnés à Madagascar' },
+      { value: 8, suffix: ' ans', label: "d'expérience terrain" },
+      { value: 6, suffix: '', label: 'secteurs accompagnés (PME, coopératives...)' },
+    ],
   },
   apropos: {
     eyebrow: 'À propos de FinanSys',
@@ -31,27 +38,39 @@ const fr = {
   },
   services: {
     eyebrow: 'Nos services',
-    title: 'Des solutions financières à chaque étape',
-    subtitle: "Que vous soyez particulier ou entreprise, FinanSys propose des services adaptés à vos objectifs.",
+    title: 'Des solutions pour chaque étape de votre gestion',
+    subtitle: "Que vous soyez indépendant, PME ou coopérative, FinanSys propose des outils adaptés à votre activité.",
     items: [
-      { icon: 'trending', title: 'Conseil en investissement', description: 'Des stratégies personnalisées pour faire fructifier votre capital.' },
-      { icon: 'shield', title: 'Gestion de patrimoine', description: 'Un accompagnement complet pour protéger et développer vos actifs.' },
-      { icon: 'target', title: 'Planification financière', description: 'Des plans clairs pour atteindre vos objectifs à court et long terme.' },
-      { icon: 'percent', title: 'Optimisation fiscale', description: 'Des solutions pour réduire votre charge fiscale en toute légalité.' },
+      { icon: 'chart-pie', title: 'Tableau de bord', description: "Une vue claire et centralisée de votre santé financière." },
+      { icon: 'cash', title: 'Trésorerie', description: 'Suivi et anticipation de vos flux de trésorerie.' },
+      { icon: 'report', title: 'États financiers', description: 'Bilans et rapports conformes, générés simplement.' },
+      { icon: 'school', title: 'Formation', description: "Des formations pour comprendre et piloter vos chiffres." },
     ],
   },
   avantages: {
     eyebrow: 'Pourquoi FinanSys',
-    title: 'Des avantages qui font la différence',
-    stats: [
-      { value: 500, suffix: '+', label: 'clients accompagnés' },
-      { value: 10, suffix: ' ans', label: "d'expérience sur le marché" },
-    ],
+    title: 'Ce qui différencie FinanSys',
+    featured: {
+      icon: 'leaf',
+      title: 'La comptabilité durable',
+      description: "Intègre les dimensions économique, sociale et environnementale, avec suivi et rapports d'impact. Aucun concurrent malgache identifié ne le propose.",
+    },
     items: [
-      { title: 'Accompagnement personnalisé', description: 'Un conseiller dédié qui connaît votre situation en profondeur.' },
-      { title: 'Transparence totale', description: 'Aucun frais caché, des rapports clairs à chaque étape.' },
-      { title: 'Expertise reconnue', description: "Une équipe certifiée avec des années d'expérience dans le secteur." },
-      { title: 'Suivi en temps réel', description: "Un accès permanent à l'évolution de vos investissements." },
+      { icon: 'map-pin', title: 'Contexte malgache', description: 'Pensé pour les réalités comptables et fiscales locales.' },
+      { icon: 'bulb', title: 'Simplicité', description: "Des données compréhensibles, même sans expertise comptable." },
+      { icon: 'compass', title: 'Pilotage et décision', description: 'Trésorerie, rentabilité, besoin en fonds de roulement.' },
+      { icon: 'building-bank', title: 'Fiscalité intégrée', description: "Comptabilité et suivi fiscal dans un même environnement." },
+      { icon: 'users', title: 'Accompagnement humain', description: "Coaching, mentorat, formation, en complément de l'outil." },
+      { icon: 'lock', title: 'Sécurité des données', description: 'Chiffrement et confidentialité des données financières.' },
+    ],
+  },
+  testimonials: {
+    eyebrow: 'Ils nous font confiance',
+    title: 'Ce que disent nos clients',
+    items: [
+      { quote: "FinanSys nous a permis de suivre notre trésorerie au jour le jour, on ne navigue plus à l'aveugle.", name: 'Rado H.', role: 'Gérant, PME import-export' },
+      { quote: "Une équipe qui comprend vraiment le contexte malgache. L'accompagnement fait toute la différence.", name: 'Voahangy R.', role: 'Présidente, coopérative agricole' },
+      { quote: "Enfin des rapports que je comprends sans être comptable. Le pilotage devient simple.", name: 'Tojo A.', role: 'Fondateur, startup' },
     ],
   },
   contact: {
@@ -59,9 +78,9 @@ const fr = {
     title: 'Parlons de votre avenir financier',
     subtitle: "Une question, un projet ? Notre équipe vous répond sous 24h.",
     infos: [
-      { label: 'Adresse', value: '12 Rue de la Bourse, 75002 Paris' },
-      { label: 'Téléphone', value: '+33 1 23 45 67 89' },
-      { label: 'Email', value: 'contact@finansys.example' },
+      { label: 'Adresse', value: 'Fort-Dauphin, Madagascar' },
+      { label: 'Téléphone', value: '034 04 141 22 (à confirmer)' },
+      { label: 'Email', value: 'contact@finansys.mg' },
     ],
     form: {
       nameLabel: 'Nom complet',

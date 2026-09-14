@@ -3,24 +3,29 @@ import useInView from '../hooks/useInView';
 import '../styles/animations.css';
 
 const icons = {
-  trending: (
-    <path d="M3 17l6-6 4 4 8-8M21 7h-6m6 0v6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-  ),
-  shield: (
-    <path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-  ),
-  target: (
-    <g stroke="currentColor" strokeWidth="2" fill="none">
-      <circle cx="12" cy="12" r="8" />
-      <circle cx="12" cy="12" r="4" />
-      <circle cx="12" cy="12" r="0.6" fill="currentColor" />
+  'chart-pie': (
+    <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none">
+      <path d="M12 3a9 9 0 109 9h-9V3z" />
+      <path d="M15 3.5A9 9 0 0120.5 9H15V3.5z" />
     </g>
   ),
-  percent: (
-    <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none">
-      <line x1="5" y1="19" x2="19" y2="5" />
-      <circle cx="7" cy="7" r="2.2" />
-      <circle cx="17" cy="17" r="2.2" />
+  cash: (
+    <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none">
+      <rect x="2.5" y="6" width="19" height="12" rx="2" />
+      <circle cx="12" cy="12" r="3" />
+      <path d="M6 9v.01M18 15v.01" />
+    </g>
+  ),
+  report: (
+    <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none">
+      <path d="M7 3h8l4 4v14H7V3z" />
+      <path d="M15 3v4h4M9 12h6M9 16h6" />
+    </g>
+  ),
+  school: (
+    <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none">
+      <path d="M12 3l10 5-10 5L2 8l10-5z" />
+      <path d="M6 10.5v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5" />
     </g>
   ),
 };
