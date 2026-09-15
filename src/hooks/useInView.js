@@ -1,11 +1,17 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 export default function useInView(threshold = 0.2) {
-  const ref = useRef(null);
+  const [node, setNode] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
 
+  // Ref-callback plutôt que useRef : se redéclenche correctement même si
+  // l'élément n'apparaît dans le DOM qu'après le montage initial (ex: une
+  // section affichée seulement après un chargement asynchrone).
+  const ref = useCallback((el) => {
+    setNode(el);
+  }, []);
+
   useEffect(() => {
-    const node = ref.current;
     if (!node) return;
 
     const observer = new IntersectionObserver(
@@ -20,7 +26,7 @@ export default function useInView(threshold = 0.2) {
 
     observer.observe(node);
     return () => observer.disconnect();
-  }, [threshold]);
+  }, [node, threshold]);
 
   return [ref, isVisible];
 }
