@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import useInView from '../hooks/useInView';
 import '../styles/animations.css';
 
-const APP_URL = 'http://app.finansys-compta.mg';
+const APP_URL = 'https://app.finansys-compta.mg';
 
 const formatAr = (n) => new Intl.NumberFormat('fr-MG').format(n) + ' Ar';
 
