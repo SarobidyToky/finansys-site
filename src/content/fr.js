@@ -1,10 +1,10 @@
 const fr = {
   nav: [
-    { label: 'Accueil', href: '#hero' },
-    { label: 'À propos', href: '#apropos' },
-    { label: 'Services', href: '#services' },
-    { label: 'Avantages', href: '#avantages' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Accueil', href: '/#hero' },
+    { label: 'À propos', href: '/#apropos' },
+    { label: 'Services', href: '/#services' },
+    { label: 'Avantages', href: '/#avantages' },
+    { label: 'Contact', href: '/#contact' },
   ],
   cta: {
     label: 'Nous contacter',
@@ -41,10 +41,10 @@ const fr = {
     title: 'Des solutions pour chaque étape de votre gestion',
     subtitle: "Que vous soyez indépendant, PME ou coopérative, FinanSys propose des outils adaptés à votre activité.",
     items: [
-      { icon: 'chart-pie', title: 'Tableau de bord', description: "Une vue claire et centralisée de votre santé financière." },
-      { icon: 'cash', title: 'Trésorerie', description: 'Suivi et anticipation de vos flux de trésorerie.' },
-      { icon: 'report', title: 'États financiers', description: 'Bilans et rapports conformes, générés simplement.' },
-      { icon: 'school', title: 'Formation', description: "Des formations pour comprendre et piloter vos chiffres." },
+      { icon: 'chart-pie', slug: 'tableau-de-bord', title: 'Tableau de bord', description: "Une vue claire et centralisée de votre santé financière." },
+      { icon: 'cash', slug: 'tresorerie', title: 'Trésorerie', description: 'Suivi et anticipation de vos flux de trésorerie.' },
+      { icon: 'report', slug: 'etats-financiers', title: 'États financiers', description: 'Bilans et rapports conformes, générés simplement.' },
+      { icon: 'school', slug: 'formation', title: 'Formation', description: "Des formations pour comprendre et piloter vos chiffres." },
     ],
   },
   avantages: {

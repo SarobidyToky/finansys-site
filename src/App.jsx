@@ -1,15 +1,9 @@
 import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Loader from './components/Loader';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Stats from './components/Stats';
-import About from './components/About';
-import Services from './components/Services';
-import Pricing from './components/Pricing';
-import Advantages from './components/Advantages';
-import Testimonials from './components/Testimonials';
-import Faq from './components/Faq';
-import Contact from './components/Contact';
+import Home from './components/Home';
+import ServicePage from './components/ServicePage';
 import Footer from './components/Footer';
 
 function App() {
@@ -19,19 +13,16 @@ function App() {
     <>
       {loading && <Loader onFinish={() => setLoading(false)} />}
       {!loading && (
-        <div className="min-h-screen">
-          <Navbar />
-          <Hero />
-          <Stats />
-          <About />
-          <Services />
-          <Pricing />
-          <Advantages />
-          <Testimonials />
-          <Faq />
-          <Contact />
-          <Footer />
-        </div>
+        <BrowserRouter>
+          <div className="min-h-screen">
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/services/:slug" element={<ServicePage />} />
+            </Routes>
+            <Footer />
+          </div>
+        </BrowserRouter>
       )}
     </>
   );

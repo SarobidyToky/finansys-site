@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import fr from '../content/fr';
 import useInView from '../hooks/useInView';
 import '../styles/animations.css';
@@ -47,7 +48,12 @@ export default function Services() {
 
         <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {fr.services.items.map((item, i) => (
-            <div key={item.title} className={`reveal ${gridVisible ? 'reveal-visible' : ''} rounded-2xl p-7 transition-transform hover:-translate-y-1`} style={{ transitionDelay: `${i * 0.1}s`, backgroundColor: 'var(--color-bg-soft)' }}>
+            <Link
+              to={`/services/${item.slug}`}
+              key={item.title}
+              className={`reveal ${gridVisible ? 'reveal-visible' : ''} rounded-2xl p-7 transition-transform hover:-translate-y-1 block`}
+              style={{ transitionDelay: `${i * 0.1}s`, backgroundColor: 'var(--color-bg-soft)' }}
+            >
               <span className="flex items-center justify-center w-12 h-12 rounded-xl mb-5" style={{ backgroundColor: 'rgba(59,63,161,0.1)', color: 'var(--color-primary)' }}>
                 <svg viewBox="0 0 24 24" className="w-6 h-6">
                   {icons[item.icon]}
@@ -57,7 +63,7 @@ export default function Services() {
                 {item.title}
               </h3>
               <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>{item.description}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

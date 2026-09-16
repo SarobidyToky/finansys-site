@@ -1,4 +1,5 @@
 import fr from '../content/fr';
+import { Link } from 'react-router-dom';
 import useInView from '../hooks/useInView';
 import '../styles/animations.css';
 
@@ -67,9 +68,10 @@ export default function Advantages() {
           </h2>
         </div>
 
-        <div
+        <Link
+          to="/services/comptabilite-durable"
           ref={featuredRef}
-          className={`reveal ${featuredVisible ? 'reveal-visible' : ''} rounded-2xl p-7 mb-8 flex items-start gap-4`}
+          className={`reveal ${featuredVisible ? 'reveal-visible' : ''} rounded-2xl p-7 mb-8 flex items-start gap-4 transition-transform hover:-translate-y-1`}
           style={{ backgroundColor: 'rgba(34,197,94,0.1)', border: '2px solid var(--color-accent)' }}
         >
           <span className="flex items-center justify-center w-12 h-12 rounded-xl shrink-0" style={{ backgroundColor: 'rgba(34,197,94,0.2)', color: 'var(--color-accent)' }}>
@@ -81,7 +83,7 @@ export default function Advantages() {
             </h3>
             <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>{fr.avantages.featured.description}</p>
           </div>
-        </div>
+        </Link>
 
         <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {fr.avantages.items.map((item, i) => (
