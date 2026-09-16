@@ -126,7 +126,7 @@ const fr = {
     subtitle: "Une question, un projet ? Notre équipe vous répond sous 24h.",
     infos: [
       { label: 'Adresse', value: 'Fort-Dauphin, Madagascar' },
-      { label: 'Téléphone', value: '034 04 141 22 (à confirmer)' },
+      { label: 'Téléphone', value: '+261 34 04 141 22' },
       { label: 'Email', value: 'contact@finansys.mg' },
     ],
     form: {
