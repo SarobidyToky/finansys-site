@@ -8,6 +8,7 @@ import Services from './components/Services';
 import Pricing from './components/Pricing';
 import Advantages from './components/Advantages';
 import Testimonials from './components/Testimonials';
+import Faq from './components/Faq';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -27,6 +28,7 @@ function App() {
           <Pricing />
           <Advantages />
           <Testimonials />
+          <Faq />
           <Contact />
           <Footer />
         </div>

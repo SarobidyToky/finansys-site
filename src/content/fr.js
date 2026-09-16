@@ -73,6 +73,53 @@ const fr = {
       { quote: "Enfin des rapports que je comprends sans être comptable. Le pilotage devient simple.", name: 'Tojo A.', role: 'Fondateur, startup' },
     ],
   },
+  faq: {
+    eyebrow: 'FAQ',
+    title: 'Vos questions, nos réponses',
+    items: [
+      {
+        question: "Qu'est-ce que FinanSys exactement ?",
+        reponse: "FinanSys est une plateforme digitale malgache qui simplifie la gestion comptable, fiscale et financière des entreprises, avec une approche de comptabilité durable. Elle combine un outil en ligne et un accompagnement humain (coaching, mentorat, formation).",
+      },
+      {
+        question: "À qui s'adresse FinanSys ?",
+        reponse: "À toute personne ou structure ayant une activité à gérer : startups, TPE, PME, entrepreneurs, commerçants, artisans, coopératives et associations à Madagascar.",
+      },
+      {
+        question: "FinanSys remplace-t-il mon expert-comptable ?",
+        reponse: "Non. FinanSys simplifie la gestion au quotidien et vous donne une lecture claire de vos chiffres, mais l'expertise, le conseil et la validation réglementaire d'un expert-comptable restent recommandés, notamment pour les sujets fiscaux.",
+      },
+      {
+        question: "Mes données financières sont-elles en sécurité avec FinanSys ?",
+        reponse: "La sécurité et la confidentialité des données sont une priorité pour FinanSys : chiffrement, accès sécurisé, hébergement des données.",
+      },
+      {
+        question: "FinanSys convient-il à une entreprise qui débute tout juste ?",
+        reponse: "Oui. La plateforme est pensée pour être accessible dès les premiers mois d'activité, sans nécessiter de compétences comptables préalables.",
+      },
+      {
+        question: "Qu'est-ce que la comptabilité durable proposée par FinanSys ?",
+        reponse: "C'est un module qui permet de suivre, en plus des indicateurs financiers classiques, l'impact économique, social et environnemental de votre entreprise, avec des rapports simples à générer et à partager.",
+      },
+      {
+        question: 'Comment se passe la prise en main de la plateforme ?',
+        reponse: "FinanSys propose un accompagnement à la prise en main, ainsi que des formations pour vous aider à comprendre et utiliser vos données financières, même sans expérience comptable.",
+      },
+      {
+        question: 'FinanSys est-il utilisable partout à Madagascar ?',
+        reponse: "FinanSys est une plateforme en ligne, accessible depuis toute connexion internet, partout à Madagascar. L'accompagnement humain (coaching, formations) est actuellement concentré sur certaines zones et s'étend progressivement — contactez-nous pour vérifier la disponibilité dans votre région.",
+      },
+      {
+        question: 'Quels sont les tarifs de FinanSys ?',
+        reponse: 'Les tarifs dépendent de vos besoins et de la taille de votre activité. Contactez l\'équipe FinanSys pour obtenir une offre adaptée à votre situation.',
+      },
+      {
+        question: 'Comment contacter FinanSys pour une démonstration ?',
+        reponse: 'Via le formulaire de contact du site, ou directement par téléphone. Une prise de rendez-vous est proposée pour découvrir la plateforme et échanger sur vos besoins.',
+      },
+    ],
+  },
+
   contact: {
     eyebrow: 'Contact',
     title: 'Parlons de votre avenir financier',
