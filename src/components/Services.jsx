@@ -49,12 +49,11 @@ export default function Services() {
   return (
     <section id="services" className="py-20 md:py-28 bg-white">
       <div className="max-w-6xl mx-auto px-6">
-        <div ref={headerRef} className={`reveal ${headerVisible ? 'reveal-visible' : ''} max-w-2xl mx-auto text-center mb-16`}>
-          <span className="font-semibold text-sm" style={{ color: 'var(--color-primary)' }}>{fr.services.eyebrow}</span>
-          <h2 className="text-3xl md:text-4xl font-extrabold leading-tight mt-3 mb-4" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
+        <div ref={headerRef} className={`reveal ${headerVisible ? 'reveal-visible' : ''} grid md:grid-cols-[1.1fr_0.9fr] gap-8 items-end mb-16`}>
+          <h2 className="text-3xl md:text-[2.4rem] font-extrabold leading-[1.1]" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-ink)' }}>
             {fr.services.title}
           </h2>
-          <p className="text-lg" style={{ color: 'var(--color-text-muted)' }}>{fr.services.subtitle}</p>
+          <p className="text-base md:text-lg md:text-right" style={{ color: 'var(--color-text-muted)' }}>{fr.services.subtitle}</p>
         </div>
 
         <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -62,18 +61,31 @@ export default function Services() {
             <Link
               to={`/services/${item.slug}`}
               key={item.title}
-              className={`reveal ${gridVisible ? 'reveal-visible' : ''} rounded-2xl p-7 transition-transform hover:-translate-y-1 block`}
-              style={{ transitionDelay: `${i * 0.1}s`, backgroundColor: 'var(--color-bg-soft)' }}
+              className={`reveal ${gridVisible ? 'reveal-visible' : ''} rounded-2xl p-7 transition-all hover:-translate-y-1 block bg-white group`}
+              style={{ transitionDelay: `${i * 0.1}s`, border: '1px solid #EAE9F3' }}
             >
-              <span className="flex items-center justify-center w-12 h-12 rounded-xl mb-5" style={{ backgroundColor: 'rgba(59,63,161,0.1)', color: 'var(--color-primary)' }}>
-                <svg viewBox="0 0 24 24" className="w-6 h-6">
+              <span className="flex items-center justify-center w-11 h-11 rounded-lg mb-5" style={{ color: 'var(--color-primary)' }}>
+                <svg viewBox="0 0 24 24" className="w-7 h-7">
                   {icons[item.icon]}
                 </svg>
               </span>
-              <h3 className="font-bold text-lg mb-2" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
+              <h3 className="font-bold text-lg mb-3" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-ink)' }}>
                 {item.title}
               </h3>
-              <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>{item.description}</p>
+              <ul className="space-y-1.5 mb-4">
+                {item.bullets.map((b) => (
+                  <li key={b} className="text-sm flex items-start gap-2" style={{ color: 'var(--color-text-muted)' }}>
+                    <span className="mt-1.5 w-1 h-1 rounded-full shrink-0" style={{ backgroundColor: 'var(--color-primary)' }} />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+              <span
+                className="text-sm font-semibold inline-flex items-center gap-1 transition-transform group-hover:translate-x-1"
+                style={{ color: 'var(--color-primary)' }}
+              >
+                En savoir plus
+              </span>
             </Link>
           ))}
         </div>

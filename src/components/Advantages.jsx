@@ -62,8 +62,7 @@ export default function Advantages() {
     <section id="avantages" className="py-20 md:py-28" style={{ backgroundColor: 'var(--color-bg-soft)' }}>
       <div className="max-w-6xl mx-auto px-6">
         <div ref={headerRef} className={`reveal ${headerVisible ? 'reveal-visible' : ''} max-w-2xl mx-auto text-center mb-14`}>
-          <span className="font-semibold text-sm" style={{ color: 'var(--color-primary)' }}>{fr.avantages.eyebrow}</span>
-          <h2 className="text-3xl md:text-4xl font-extrabold leading-tight mt-3" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
+          <h2 className="text-3xl md:text-[2.4rem] font-extrabold leading-[1.1]" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-ink)' }}>
             {fr.avantages.title}
           </h2>
         </div>

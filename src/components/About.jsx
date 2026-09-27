@@ -7,11 +7,14 @@ export default function About() {
   const [cardsRef, cardsVisible] = useInView(0.2);
 
   return (
-    <section id="apropos" className="py-20 md:py-28" style={{ backgroundColor: 'var(--color-bg-soft)' }}>
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+    <section id="apropos" className="relative py-20 md:py-28 overflow-hidden" style={{ backgroundColor: 'var(--color-bg-soft)' }}>
+      <svg className="absolute -top-10 -left-24 w-72 h-72 opacity-[0.35] -z-0" viewBox="0 0 200 200">
+        <circle cx="100" cy="100" r="90" fill="none" stroke="var(--color-primary)" strokeWidth="1" strokeDasharray="4 6" />
+        <circle cx="100" cy="100" r="60" fill="none" stroke="var(--color-primary)" strokeWidth="1" strokeDasharray="2 5" />
+      </svg>
+      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center relative">
         <div ref={textRef} className={`reveal ${textVisible ? 'reveal-visible' : ''}`}>
-          <span className="font-semibold text-sm" style={{ color: 'var(--color-primary)' }}>{fr.apropos.eyebrow}</span>
-          <h2 className="text-3xl md:text-4xl font-extrabold leading-tight mt-3 mb-6" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
+          <h2 className="text-3xl md:text-[2.4rem] font-extrabold leading-[1.1] mb-6" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-ink)' }}>
             {fr.apropos.title}
           </h2>
           <p className="text-lg" style={{ color: 'var(--color-text-muted)' }}>

@@ -2,7 +2,7 @@ import fr from '../content/fr';
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: 'var(--color-text)' }}>
+    <footer style={{ backgroundColor: 'var(--color-ink)' }}>
       <div className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-10">
         <div>
           <span className="text-2xl font-extrabold" style={{ fontFamily: 'var(--font-heading)', color: 'white' }}>FinanSys</span>

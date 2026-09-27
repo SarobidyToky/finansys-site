@@ -1,14 +1,16 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Hero from './Hero';
-import Stats from './Stats';
+import Responsive from './Responsive';
 import About from './About';
 import Services from './Services';
+import Platform from './Platform';
 import Gallery from './Gallery';
 import Pricing from './Pricing';
 import Advantages from './Advantages';
 import Testimonials from './Testimonials';
 import Faq from './Faq';
+import ClosingCta from './ClosingCta';
 import Contact from './Contact';
 
 export default function Home() {
@@ -26,14 +28,16 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Stats />
+      <Responsive />
       <About />
       <Services />
+      <Platform />
       <Gallery />
       <Pricing />
       <Advantages />
       <Testimonials />
       <Faq />
+      <ClosingCta />
       <Contact />
     </>
   );

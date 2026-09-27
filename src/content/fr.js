@@ -41,12 +41,21 @@ const fr = {
     title: 'Des solutions pour chaque étape de votre gestion',
     subtitle: "Que vous soyez indépendant, PME ou coopérative, FinanSys propose des outils adaptés à votre activité.",
     items: [
-      { icon: 'chart-pie', slug: 'tableau-de-bord', title: 'Tableau de bord', description: "Une vue claire et centralisée de votre santé financière." },
-      { icon: 'cash', slug: 'tresorerie', title: 'Trésorerie', description: 'Suivi et anticipation de vos flux de trésorerie.' },
-      { icon: 'report', slug: 'etats-financiers', title: 'États financiers', description: 'Bilans et rapports conformes, générés simplement.' },
-      { icon: 'school', slug: 'formation', title: 'Formation', description: "Des formations pour comprendre et piloter vos chiffres." },
-      { icon: 'scale', slug: 'fiscalite', title: 'Fiscalité', description: 'Anticipez vos impôts et vos déclarations sans mauvaise surprise.' },
-      { icon: 'digital', slug: 'digitalisation', title: 'Digitalisation', description: 'Modernisez vos processus de gestion au quotidien.' },
+      { icon: 'chart-pie', slug: 'tableau-de-bord', title: 'Tableau de bord', description: "Une vue claire et centralisée de votre santé financière.", bullets: ['Chiffre d\'affaires, charges et résultat en un coup d\'œil', 'Graphiques d\'évolution sur 12 mois'] },
+      { icon: 'cash', slug: 'tresorerie', title: 'Trésorerie', description: 'Suivi et anticipation de vos flux de trésorerie.', bullets: ['Comptes bancaires et caisse réunis', 'Rapprochement bancaire automatisé'] },
+      { icon: 'report', slug: 'etats-financiers', title: 'États financiers', description: 'Bilans et rapports conformes, générés simplement.', bullets: ['Bilan, compte de résultat, grand livre', 'Export PDF et Excel en un clic'] },
+      { icon: 'school', slug: 'formation', title: 'Formation', description: "Des formations pour comprendre et piloter vos chiffres.", bullets: ['Prise en main accompagnée', 'Ateliers adaptés aux non-comptables'] },
+      { icon: 'scale', slug: 'fiscalite', title: 'Fiscalité', description: 'Anticipez vos impôts et vos déclarations sans mauvaise surprise.', bullets: ['Calcul automatique TVA et IS', 'Suivi des déclarations et échéances'] },
+      { icon: 'digital', slug: 'digitalisation', title: 'Digitalisation', description: 'Modernisez vos processus de gestion au quotidien.', bullets: ['Import bancaire, factures en ligne', 'Accès sécurisé depuis partout'] },
+    ],
+  },
+  plateforme: {
+    title: 'Trois piliers, une seule plateforme',
+    text: "Plutôt que de jongler entre un logiciel de comptabilité, un tableur fiscal et un suivi d'impact séparé, FinanSys réunit les trois dans un même environnement — chaque écriture comptable alimente automatiquement le calcul fiscal et le reporting de durabilité.",
+    pillars: [
+      { title: 'Comptabilité', description: 'Écritures, factures, trésorerie, états financiers.' },
+      { title: 'Fiscalité', description: 'TVA, impôt sur les sociétés, déclarations, échéances.' },
+      { title: 'Durabilité', description: 'Bilan carbone, indicateurs ESG, rapports d\'impact.' },
     ],
   },
   avantages: {
@@ -122,13 +131,19 @@ const fr = {
     ],
   },
 
+  closingCta: {
+    title: 'Prêt à voir plus clair dans vos finances ?',
+    text: "Prenez rendez-vous pour une démonstration, sans engagement.",
+    ctaLabel: 'Prendre rendez-vous',
+  },
+
   contact: {
     eyebrow: 'Contact',
     title: 'Parlons de votre avenir financier',
     subtitle: "Une question, un projet ? Notre équipe vous répond sous 24h.",
     infos: [
       { label: 'Adresse', value: 'Fort-Dauphin, Madagascar' },
-      { label: 'Téléphone', value: '034 04 141 22 (à confirmer)' },
+      { label: 'Téléphone', value: '034 04 141 22' },
       { label: 'Email', value: 'contact@finansys.mg' },
     ],
     form: {

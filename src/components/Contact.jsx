@@ -37,7 +37,6 @@ export default function Contact() {
     <section id="contact" className="py-20 md:py-28" style={{ backgroundColor: 'var(--color-bg-soft)' }}>
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16">
         <div ref={infoRef} className={`reveal ${infoVisible ? 'reveal-visible' : ''}`}>
-          <span className="font-semibold text-sm" style={{ color: 'var(--color-primary)' }}>{fr.contact.eyebrow}</span>
           <h2 className="text-3xl md:text-4xl font-extrabold leading-tight mt-3 mb-4" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
             {fr.contact.title}
           </h2>

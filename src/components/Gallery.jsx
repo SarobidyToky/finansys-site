@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import useInView from '../hooks/useInView';
+import BrowserFrame from './BrowserFrame';
 import '../styles/animations.css';
 
 import dashboardImg from '../img/screenshots/dashboard.png';
@@ -110,43 +111,38 @@ export default function Gallery() {
   const next = () => setOpenIndex((i) => (i + 1) % SCREENS.length);
 
   return (
-    <section id="apercu" className="py-20 md:py-28 bg-white">
+    <section id="apercu" className="py-20 md:py-28" style={{ backgroundColor: 'var(--color-bg-soft)' }}>
       <div className="max-w-6xl mx-auto px-6">
-        <div ref={headerRef} className={`reveal ${headerVisible ? 'reveal-visible' : ''} max-w-2xl mx-auto text-center mb-14`}>
-          <span className="font-semibold text-sm" style={{ color: 'var(--color-primary)' }}>Découvrez la plateforme</span>
-          <h2 className="text-3xl md:text-4xl font-extrabold leading-tight mt-3" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
+        <div ref={headerRef} className={`reveal ${headerVisible ? 'reveal-visible' : ''} max-w-xl mb-14`}>
+          <h2 className="text-3xl md:text-[2.4rem] font-extrabold leading-[1.1] mb-3" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-ink)' }}>
             FinanSys en images
           </h2>
-          <p className="text-sm mt-3" style={{ color: 'var(--color-text-muted)' }}>
+          <p className="text-base" style={{ color: 'var(--color-text-muted)' }}>
             Un aperçu concret de l'outil, avant même de créer votre compte.
           </p>
         </div>
 
-        <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-3 lg:auto-rows-[1fr] gap-5">
           {SCREENS.map((item, i) => (
             <button
               key={item.title}
               onClick={() => setOpenIndex(i)}
-              className={`reveal ${gridVisible ? 'reveal-visible' : ''} group rounded-2xl overflow-hidden text-left transition-transform hover:-translate-y-1`}
-              style={{ transitionDelay: `${i * 0.08}s`, border: '1px solid var(--color-bg-soft)' }}
+              className={`reveal ${gridVisible ? 'reveal-visible' : ''} group text-left transition-transform hover:-translate-y-1 ${i === 0 ? 'lg:col-span-2 lg:row-span-2' : ''}`}
+              style={{ transitionDelay: `${i * 0.08}s` }}
             >
-              <div className="relative overflow-hidden aspect-video" style={{ backgroundColor: 'var(--color-bg-soft)' }}>
-                <img
-                  src={item.src}
-                  alt={item.title}
-                  className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
-                />
+              <div className="relative overflow-hidden rounded-lg h-full" style={{ aspectRatio: i === 0 ? undefined : '16/10' }}>
+                <BrowserFrame src={item.src} alt={item.title} />
                 <div
                   className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-                  style={{ backgroundColor: 'rgba(59,63,161,0.25)' }}
+                  style={{ backgroundColor: 'rgba(20,21,43,0.35)' }}
                 >
                   <span className="text-white text-sm font-semibold px-4 py-2 rounded-full" style={{ backgroundColor: 'var(--color-primary)' }}>
                     Agrandir
                   </span>
                 </div>
               </div>
-              <div className="p-4">
-                <p className="font-bold text-sm" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>{item.title}</p>
+              <div className="pt-4">
+                <p className="font-bold text-sm" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-ink)' }}>{item.title}</p>
                 <p className="text-xs mt-1" style={{ color: 'var(--color-text-muted)' }}>{item.description}</p>
               </div>
             </button>

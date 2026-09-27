@@ -55,7 +55,6 @@ export default function Faq() {
     <section id="faq" className="py-20 md:py-28 bg-white">
       <div className="max-w-3xl mx-auto px-6">
         <div ref={headerRef} className={`reveal ${headerVisible ? 'reveal-visible' : ''} text-center mb-12`}>
-          <span className="font-semibold text-sm" style={{ color: 'var(--color-primary)' }}>{fr.faq.eyebrow}</span>
           <h2 className="text-3xl md:text-4xl font-extrabold leading-tight mt-3" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
             {fr.faq.title}
           </h2>
