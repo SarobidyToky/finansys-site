@@ -4,6 +4,7 @@ import Hero from './Hero';
 import Stats from './Stats';
 import About from './About';
 import Services from './Services';
+import Gallery from './Gallery';
 import Pricing from './Pricing';
 import Advantages from './Advantages';
 import Testimonials from './Testimonials';
@@ -28,6 +29,7 @@ export default function Home() {
       <Stats />
       <About />
       <Services />
+      <Gallery />
       <Pricing />
       <Advantages />
       <Testimonials />

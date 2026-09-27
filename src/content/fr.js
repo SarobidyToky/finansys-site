@@ -45,6 +45,8 @@ const fr = {
       { icon: 'cash', slug: 'tresorerie', title: 'Trésorerie', description: 'Suivi et anticipation de vos flux de trésorerie.' },
       { icon: 'report', slug: 'etats-financiers', title: 'États financiers', description: 'Bilans et rapports conformes, générés simplement.' },
       { icon: 'school', slug: 'formation', title: 'Formation', description: "Des formations pour comprendre et piloter vos chiffres." },
+      { icon: 'scale', slug: 'fiscalite', title: 'Fiscalité', description: 'Anticipez vos impôts et vos déclarations sans mauvaise surprise.' },
+      { icon: 'digital', slug: 'digitalisation', title: 'Digitalisation', description: 'Modernisez vos processus de gestion au quotidien.' },
     ],
   },
   avantages: {
@@ -126,7 +128,7 @@ const fr = {
     subtitle: "Une question, un projet ? Notre équipe vous répond sous 24h.",
     infos: [
       { label: 'Adresse', value: 'Fort-Dauphin, Madagascar' },
-      { label: 'Téléphone', value: '+261 34 04 141 22' },
+      { label: 'Téléphone', value: '034 04 141 22 (à confirmer)' },
       { label: 'Email', value: 'contact@finansys.mg' },
     ],
     form: {

@@ -29,6 +29,17 @@ const icons = {
       <path d="M6 10.5v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5" />
     </g>
   ),
+  scale: (
+    <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none">
+      <path d="M12 3v18M7 7h10M4 7l3-3 3 3-3 5-3-5zM14 7l3-3 3 3-3 5-3-5z" />
+    </g>
+  ),
+  digital: (
+    <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none">
+      <rect x="3" y="4" width="18" height="12" rx="2" />
+      <path d="M8 20h8M12 16v4M7 9l3 3-3 3M13 12h4" />
+    </g>
+  ),
 };
 
 export default function Services() {
@@ -46,7 +57,7 @@ export default function Services() {
           <p className="text-lg" style={{ color: 'var(--color-text-muted)' }}>{fr.services.subtitle}</p>
         </div>
 
-        <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {fr.services.items.map((item, i) => (
             <Link
               to={`/services/${item.slug}`}

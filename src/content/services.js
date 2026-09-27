@@ -26,7 +26,7 @@ const services = {
       'Un accès depuis un ordinateur ou un smartphone, à tout moment',
       'Des données actualisées automatiquement à chaque saisie, sans ressaisie manuelle',
       'Un historique consultable pour comparer vos périodes (mois, trimestre)',
-      'Une présentation pensée pour être comprise sans formation comptable',
+      'Une présentation conçue pour être comprise sans formation comptable',
     ],
     faq: [
       {
@@ -195,8 +195,7 @@ const services = {
       },
       {
         question: 'Les formations sont-elles disponibles en présentiel ou à distance ?',
-        reponse:
-          'Selon votre localisation et vos disponibilités, les deux formats peuvent être proposés — à confirmer avec l\'équipe FinanSys lors du premier échange.',
+        reponse: 'Selon votre localisation et vos disponibilités, les deux formats peuvent être proposés.',
       },
       {
         question: 'Combien de temps dure une formation ?',
@@ -206,7 +205,7 @@ const services = {
       {
         question: "La formation est-elle incluse dans l'abonnement à la plateforme ?",
         reponse:
-          'Cela dépend du pack choisi — contactez l\'équipe FinanSys pour connaître le détail selon votre formule.',
+          "Non, la formation n'est pas incluse dans l'abonnement à la plateforme. Il s'agit d'un service distinct et indépendant, proposé séparément pour vous accompagner selon vos besoins spécifiques.",
       },
     ],
     cta: 'Reprenez le contrôle de vos chiffres.',
@@ -219,8 +218,9 @@ const services = {
       'Intégrez les dimensions économique, sociale et environnementale dans la gestion de votre entreprise avec le module Comptabilité durable de FinanSys, à Madagascar.',
     heroTitle: "La comptabilité durable : voir plus loin que le seul résultat financier",
     intro: [
-      "Et si la santé d'une entreprise ne se mesurait pas seulement en ariary ? FinanSys propose une approche encore rare à Madagascar : intégrer une véritable dimension durable dans la gestion comptable et financière des entreprises.",
-      "Concrètement, le module Durabilité permet de suivre, en complément des indicateurs financiers classiques, l'impact économique, social et environnemental de votre activité. Cette approche s'adresse à toutes les entreprises, pas seulement aux grandes structures ayant les moyens de mettre en place une démarche RSE complexe : l'objectif est de rendre ces dimensions accessibles et mesurables dès les premiers mois d'activité, avec des outils simples plutôt qu'un rapport de plusieurs dizaines de pages.",
+      "Et si la santé d'une entreprise ne se mesurait pas seulement en ariary ?",
+      "Spécialiste des services comptables et financiers à Madagascar, FinanSys va plus loin que la tenue de compte classique. Nous proposons une approche innovante : intégrer une véritable dimension durable au cœur même de votre gestion financière.",
+      "En complément de notre service principal - la gestion comptable au quotidien, notre module Durabilité vous permet de mesurer l'impact économique, social et environnemental de votre activité. Cette approche s'adresse à toutes les entreprises, pas seulement aux grandes structures ayant les moyens de mettre en place une démarche RSE complexe : l'objectif est de rendre ces dimensions accessibles et mesurables dès les premiers mois d'activité, avec des outils simples plutôt qu'un rapport de plusieurs dizaines de pages.",
     ],
     why: [
       "De plus en plus de clients, partenaires et bailleurs de fonds s'intéressent à la manière dont une entreprise fonctionne, pas seulement à ses résultats financiers. Pouvoir présenter des données claires sur son impact social et environnemental devient un avantage concret, que ce soit pour rassurer un partenaire, répondre à un appel d'offres, ou simplement mieux comprendre sa propre activité.",
@@ -266,6 +266,111 @@ const services = {
       },
     ],
     cta: "Découvrez comment intégrer la durabilité dans la gestion de votre entreprise, dès aujourd'hui.",
+  },
+  fiscalite: {
+    slug: 'fiscalite',
+    seoTitle: 'Gestion et suivi fiscal pour PME | FinanSys Madagascar',
+    metaDescription:
+      'Anticipez vos échéances fiscales à Madagascar, calculez vos impôts sans erreur et préparez vos déclarations en toute sérénité avec FinanSys.',
+    heroTitle: 'Fiscalité : simplifiez vos déclarations et évitez les mauvaises surprises',
+    intro: [
+      "La gestion des impôts et des taxes ne doit plus être une source de stress ou d'incertitude. FinanSys simplifie la fiscalité de votre entreprise en automatisant le calcul de vos obligations et en centralisant vos justificatifs au même endroit.",
+      "À Madagascar, la complexité des règles fiscales, la multiplicité des échéances (TVA, IR, IS, ISI...) et le risque de pénalités de retard pèsent lourdement sur le quotidien des entrepreneurs. FinanSys vous aide à anticiper le montant de vos impôts au fil de votre activité, évitant ainsi les régularisations brutales et les erreurs de saisie.",
+    ],
+    why: [
+      "Une mauvaise anticipation fiscale peut rapidement mettre en péril la trésorerie d'une entreprise, même lorsque celle-ci est rentable. Attendre le dernier moment pour calculer ses taxes expose à des erreurs, des oublis ou des retards lourdement sanctionnés.",
+      "Gérer sa fiscalité de manière proactive permet non seulement d'être en totale conformité avec l'administration fiscale, mais aussi d'intégrer avec précision le poids des impôts dans votre pilotage financier quotidien.",
+    ],
+    steps: [
+      'Vos opérations de ventes et d\'achats enregistrées dans FinanSys alimentent directement les bases de calcul de vos taxes.',
+      'La plateforme calcule automatiquement vos estimations d\'impôts et de TVA à reverser selon la réglementation malgache.',
+      'Des rappels et un calendrier fiscal vous préviennent à l\'approche de chaque échéance de déclaration.',
+      'Vos données et justificatifs sont prêts à être transmis à votre comptable ou à l\'administration fiscale.',
+    ],
+    benefits: [
+      'Une estimation en temps réel de vos obligations fiscales (TVA, impôts sur les sociétés, etc.)',
+      'Un calendrier des échéances pour ne plus jamais manquer une date limite',
+      'Un gain de temps considérable lors de la préparation de vos déclarations',
+      'Une réduction majeure des risques d\'erreurs et de pénalités de retard',
+      'Des documents et pièces justificatives centralisés et prêts pour un contrôle fiscal',
+      'Une meilleure visibilité sur le net réel restant à disposition de l\'entreprise',
+    ],
+    faq: [
+      {
+        question: 'Le module Fiscalité remplace-t-il mon comptable ou un conseiller fiscal ?',
+        reponse:
+          'Non. Il facilite la préparation des données et le calcul des estimations, mais la validation finale, le dépôt officiel et le conseil stratégique restent du ressort de votre comptable ou conseiller.',
+      },
+      {
+        question: 'Les règles fiscales malgaches sont-elles mises à jour dans la plateforme ?',
+        reponse:
+          'Oui, les taux, barèmes et règles de calcul intégrés dans FinanSys sont ajustés en fonction des évolutions de la loi de finances en vigueur à Madagascar.',
+      },
+      {
+        question: 'Puis-je gérer la TVA déductible et la TVA collectée avec FinanSys ?',
+        reponse:
+          'Oui, la plateforme suit la TVA sur vos ventes et vos achats éligibles pour vous donner le solde exact de TVA à payer ou le crédit de TVA à reporter.',
+      },
+      {
+        question: "Que se passe-t-il si j'ai un contrôle fiscal ?",
+        reponse:
+          "FinanSys rassemble et structure l'historique de vos opérations ainsi que les pièces justificatives associées, ce qui facilite grandement le travail d'extraction pour répondre aux demandes de l'administration.",
+      },
+    ],
+    cta: 'Anticipez vos échéances fiscales et sécurisez la gestion de votre entreprise.',
+  },
+
+  digitalisation: {
+    slug: 'digitalisation',
+    seoTitle: 'Digitalisation des processus de gestion pour PME | FinanSys Madagascar',
+    metaDescription:
+      "Simplifiez vos opérations, supprimez le papier et automatisez la gestion de votre entreprise à Madagascar grâce à l'accompagnement FinanSys.",
+    heroTitle: 'Digitalisation des processus : modernisez votre gestion pour gagner en efficacité',
+    intro: [
+      "Remplacer les cahiers volants, les fichiers Excel dispersés et les validations manuelles ne relève plus du luxe, mais de la survie opérationnelle. FinanSys vous accompagne pas à pas dans la modernisation et l'automatisation de vos processus de gestion au quotidien.",
+      "À Madagascar, beaucoup d'entreprises perdent un temps précieux dans des tâches répétitives, le classement de reçus papier ou la saisie manuelle d'informations d'un support à un autre. Cet accompagnement structuré permet de passer d'un fonctionnement traditionnel et vulnérable à des processus fluides, centralisés et accessibles à votre équipe en quelques clics.",
+    ],
+    why: [
+      "Une gestion reposant sur le papier ou des méthodes informelles ralentit la prise de décision et augmente le risque d'erreurs humaines, de pertes de documents ou de fraudes internes. De plus, la croissance d'une entreprise devient vite ingérable sans outils adaptés.",
+      "Digitaliser ses processus permet de libérer du temps pour vos équipes, d'accélérer le traitement de vos ventes et de vos achats, et d'assurer une continuité de vos activités, même en cas de déplacement du dirigeant.",
+    ],
+    steps: [
+      'Un état des lieux de vos méthodes actuelles permet de repérer les blocages et les pertes de temps dans votre organisation.',
+      "L'équipe FinanSys configure la plateforme pour l'adapter précisément à votre flux de travail (facturation, achats, validation, classement).",
+      'Vos collaborateurs sont guidés pour prendre en main les nouvelles routines numériques sans perturber l\'activité courante.',
+      'Vos processus deviennent entièrement digitaux, traçables et intégrés directement à vos indicateurs financiers.',
+    ],
+    benefits: [
+      'Un diagnostic clair de vos processus existants et des axes de simplification',
+      'La suppression progressive du papier au profit de documents numériques centralisés',
+      'Une automatisation des tâches chronophages (transmission de factures, relances, suivi)',
+      'Une traçabilité renforcée de chaque opération réalisée par vos équipes',
+      'Un gain de temps considérable pour vous concentrer sur le développement commercial',
+      'Un accompagnement sur-mesure adapté au rythme de votre entreprise',
+    ],
+    faq: [
+      {
+        question: "Faut-il modifier toute l'organisation de mon entreprise d'un coup ?",
+        reponse:
+          'Non. La digitalisation se fait étape par étape, en commençant par les processus les plus prioritaires (facturation, gestion des dépenses) pour ne pas perturber vos équipes.',
+      },
+      {
+        question: 'Mes collaborateurs auront-ils besoin de compétences informatiques poussées ?',
+        reponse:
+          'Non, les outils et méthodes mis en place sont conçus pour être simples et intuitifs, accessibles à toute personne sachant utiliser un smartphone ou un ordinateur.',
+      },
+      {
+        question: "Cet accompagnement est-il inclus dans l'abonnement à la plateforme ?",
+        reponse:
+          "Non, la digitalisation des processus est un service d'accompagnement distinct, proposé séparément pour répondre aux besoins d'organisation spécifiques de chaque entreprise.",
+      },
+      {
+        question: 'Est-ce adapté aux petites structures qui utilisent encore des cahiers de note ?',
+        reponse:
+          "Oui, c'est précisément pour les TPE et PME fonctionnant encore de manière traditionnelle que cet accompagnement apporte le plus de valeur et de gain de temps.",
+      },
+    ],
+    cta: "Passez au numérique et gagnez en efficacité dès aujourd'hui.",
   },
 };
 
