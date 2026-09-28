@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import fr from '../content/fr';
 import useInView from '../hooks/useInView';
+import VideoEmbed from './VideoEmbed';
 import '../styles/animations.css';
 
 const icons = {
@@ -56,12 +57,13 @@ export default function Services() {
           <p className="text-base md:text-lg md:text-right" style={{ color: 'var(--color-text-muted)' }}>{fr.services.subtitle}</p>
         </div>
 
-        <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid lg:grid-cols-[1.35fr_1fr] gap-10 items-start">
+        <div ref={gridRef} className="grid sm:grid-cols-2 gap-5">
           {fr.services.items.map((item, i) => (
             <Link
               to={`/services/${item.slug}`}
               key={item.title}
-              className={`reveal ${gridVisible ? 'reveal-visible' : ''} rounded-2xl p-7 transition-all hover:-translate-y-1 block bg-white group`}
+              className={`reveal ${gridVisible ? 'reveal-visible' : ''} rounded-2xl p-6 transition-all hover:-translate-y-1 block bg-white group`}
               style={{ transitionDelay: `${i * 0.1}s`, border: '1px solid #EAE9F3' }}
             >
               <span className="flex items-center justify-center w-11 h-11 rounded-lg mb-5" style={{ color: 'var(--color-primary)' }}>
@@ -88,6 +90,24 @@ export default function Services() {
               </span>
             </Link>
           ))}
+        </div>
+
+        {fr.services.video && (
+          <div
+            className={`reveal ${gridVisible ? 'reveal-visible' : ''} lg:sticky lg:top-28`}
+            style={{ transitionDelay: '0.2s' }}
+          >
+            <VideoEmbed url={fr.services.video.url} title={fr.services.video.title} />
+            <div className="mt-5 px-1">
+              <p className="font-bold text-lg" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-ink)' }}>
+                {fr.services.video.title}
+              </p>
+              <p className="text-sm mt-1" style={{ color: 'var(--color-text-muted)' }}>
+                {fr.services.video.description}
+              </p>
+            </div>
+          </div>
+        )}
         </div>
       </div>
     </section>

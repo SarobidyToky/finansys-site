@@ -122,15 +122,15 @@ export default function Gallery() {
           </p>
         </div>
 
-        <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-3 lg:auto-rows-[1fr] gap-5">
+        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:auto-rows-[1fr] gap-5">
           {SCREENS.map((item, i) => (
             <button
               key={item.title}
               onClick={() => setOpenIndex(i)}
-              className={`reveal ${gridVisible ? 'reveal-visible' : ''} group text-left transition-transform hover:-translate-y-1 ${i === 0 ? 'lg:col-span-2 lg:row-span-2' : ''}`}
+              className={`reveal ${gridVisible ? 'reveal-visible' : ''} group text-left min-w-0 transition-transform hover:-translate-y-1 ${i === 0 ? 'lg:col-span-2 lg:row-span-2' : ''}`}
               style={{ transitionDelay: `${i * 0.08}s` }}
             >
-              <div className="relative overflow-hidden rounded-lg h-full" style={{ aspectRatio: i === 0 ? undefined : '16/10' }}>
+              <div className={`relative overflow-hidden rounded-lg ${i === 0 ? 'lg:h-full' : ''}`} style={{ aspectRatio: i === 0 ? undefined : '16/10' }}>
                 <BrowserFrame src={item.src} alt={item.title} />
                 <div
                   className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"

@@ -40,6 +40,17 @@ const fr = {
     eyebrow: 'Nos services',
     title: 'Des solutions pour chaque étape de votre gestion',
     subtitle: "Que vous soyez indépendant, PME ou coopérative, FinanSys propose des outils adaptés à votre activité.",
+    // VIDÉO PROVISOIRE — à remplacer par la vidéo de FinanSys.
+    // `url` accepte un lien YouTube (watch?v=..., youtu.be/...) ou un fichier direct (.mp4 / .webm).
+    // Autres vidéos FR vérifiées et intégrables, si vous voulez en tester une autre :
+    //   https://www.youtube.com/watch?v=ZIfD1C3cb_U  (Bilan vs compte de résultat, Les Geeks des Chiffres)
+    //   https://www.youtube.com/watch?v=JQveReuEqSA  (Le bilan comptable en 6 min, L'Expert-Comptable)
+    //   https://www.youtube.com/watch?v=NhyNcnuKq8o  (Le compte de résultat en 10 min, Indy)
+    video: {
+      url: 'https://www.youtube.com/watch?v=vYb976KGH3w',
+      title: 'La comptabilité, simplement',
+      description: 'Les bases pour mieux comprendre et piloter vos chiffres.',
+    },
     items: [
       { icon: 'chart-pie', slug: 'tableau-de-bord', title: 'Tableau de bord', description: "Une vue claire et centralisée de votre santé financière.", bullets: ['Chiffre d\'affaires, charges et résultat en un coup d\'œil', 'Graphiques d\'évolution sur 12 mois'] },
       { icon: 'cash', slug: 'tresorerie', title: 'Trésorerie', description: 'Suivi et anticipation de vos flux de trésorerie.', bullets: ['Comptes bancaires et caisse réunis', 'Rapprochement bancaire automatisé'] },
@@ -143,7 +154,7 @@ const fr = {
     subtitle: "Une question, un projet ? Notre équipe vous répond sous 24h.",
     infos: [
       { label: 'Adresse', value: 'Fort-Dauphin, Madagascar' },
-      { label: 'Téléphone', value: '034 04 141 22' },
+      { label: 'Téléphone', value: '034 04 141 22 (à confirmer)' },
       { label: 'Email', value: 'contact@finansys.mg' },
     ],
     form: {
