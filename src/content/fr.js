@@ -58,6 +58,7 @@ const fr = {
       { icon: 'school', slug: 'formation', title: 'Formation', description: "Des formations pour comprendre et piloter vos chiffres.", bullets: ['Prise en main accompagnée', 'Ateliers adaptés aux non-comptables'] },
       { icon: 'scale', slug: 'fiscalite', title: 'Fiscalité', description: 'Anticipez vos impôts et vos déclarations sans mauvaise surprise.', bullets: ['Calcul automatique TVA et IS', 'Suivi des déclarations et échéances'] },
       { icon: 'digital', slug: 'digitalisation', title: 'Digitalisation', description: 'Modernisez vos processus de gestion au quotidien.', bullets: ['Import bancaire, factures en ligne', 'Accès sécurisé depuis partout'] },
+      { icon: 'leaf', slug: 'comptabilite-durable', title: 'Comptabilité durable', description: "Mesurez l'impact économique, social et environnemental de votre activité.", bullets: ['Indicateurs ESG simples à suivre', "Rapport d'impact partageable"] },
     ],
   },
   plateforme: {

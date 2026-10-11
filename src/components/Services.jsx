@@ -41,6 +41,12 @@ const icons = {
       <path d="M8 20h8M12 16v4M7 9l3 3-3 3M13 12h4" />
     </g>
   ),
+  leaf: (
+    <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none">
+      <path d="M5 21c0-9 5.5-16 15-16 0 9.5-7 15-15 16z" />
+      <path d="M5 21c3-5 6.5-8.5 11-11" />
+    </g>
+  ),
 };
 
 export default function Services() {
