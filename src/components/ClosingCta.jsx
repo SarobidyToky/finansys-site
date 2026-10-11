@@ -1,4 +1,5 @@
 import fr from '../content/fr';
+import partners from '../content/partners';
 
 export default function ClosingCta() {
   return (
@@ -20,6 +21,22 @@ export default function ClosingCta() {
         >
           {fr.closingCta.ctaLabel}
         </a>
+
+        <div className="mt-16 pt-10" style={{ borderTop: '1px solid rgba(255,255,255,0.15)' }}>
+          <p
+            className="text-xs font-semibold uppercase tracking-wider mb-8"
+            style={{ color: 'rgba(255,255,255,0.6)' }}
+          >
+            Ils nous accompagnent
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
+            {partners.map((p) => (
+              <div key={p.name} className="bg-white rounded-2xl px-6 py-4 md:px-8 md:py-5">
+                <img src={p.logo} alt={p.name} className="h-14 md:h-16 w-auto object-contain" />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

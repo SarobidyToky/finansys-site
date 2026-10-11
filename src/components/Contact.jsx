@@ -45,7 +45,7 @@ export default function Contact() {
           <div className="flex flex-col gap-6">
             {fr.contact.infos.map((info) => (
               <div key={info.label} className="flex items-center gap-4">
-                <span className="flex items-center justify-center w-11 h-11 rounded-xl shrink-0" style={{ backgroundColor: 'rgba(59,63,161,0.1)', color: 'var(--color-primary)' }}>
+                <span className="flex items-center justify-center w-11 h-11 rounded-xl shrink-0" style={{ backgroundColor: 'rgba(0,51,153,0.1)', color: 'var(--color-primary)' }}>
                   <svg viewBox="0 0 24 24" className="w-5 h-5">{infoIcons[info.label]}</svg>
                 </span>
                 <div>
@@ -57,7 +57,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div ref={formRef} className={`reveal ${formVisible ? 'reveal-visible' : ''} bg-white rounded-3xl p-8`} style={{ boxShadow: '0 20px 50px -20px rgba(59,63,161,0.2)' }}>
+        <div ref={formRef} className={`reveal ${formVisible ? 'reveal-visible' : ''} bg-white rounded-3xl p-8`} style={{ boxShadow: '0 20px 50px -20px rgba(0,51,153,0.2)' }}>
           {submitted ? (
             <div className="h-full flex flex-col items-center justify-center text-center py-10">
               <span className="flex items-center justify-center w-14 h-14 rounded-full mb-4" style={{ backgroundColor: 'rgba(34,197,94,0.15)' }}>

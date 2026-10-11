@@ -10,14 +10,51 @@ const PLAN_ICONS = {
   complet: <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"><path d="M12 2l2.6 6.6L21 11l-6.4 2.4L12 20l-2.6-6.6L3 11l6.4-2.4z" /></g>,
 };
 const PlanIcon = ({ name, color }) => (
-  <span className="flex items-center justify-center w-11 h-11 rounded-lg mb-4" style={{ color, backgroundColor: color === 'white' ? 'rgba(255,255,255,0.15)' : 'rgba(59,63,161,0.1)' }}>
+  <span className="flex items-center justify-center w-11 h-11 rounded-lg mb-4" style={{ color, backgroundColor: color === 'white' ? 'rgba(255,255,255,0.15)' : 'rgba(0,51,153,0.1)' }}>
     <svg viewBox="0 0 24 24" className="w-6 h-6">{PLAN_ICONS[name] || PLAN_ICONS.comptabilite}</svg>
   </span>
 );
 
 const APP_URL = 'https://app.finansys-compta.mg';
 
+// Ordre d'affichage voulu : Comptabilité - Fiscalité - Durabilité - Pack complet.
+// L'API renvoie les packs payants dans un ordre qui n'est pas garanti, donc on
+// trie ici plutôt que de dépendre de l'ordre côté backend.
+const PLAN_ORDER = ['comptabilite', 'fiscalite', 'durabilite', 'complet'];
+const sortByPlanOrder = (plans) =>
+  [...plans].sort((a, b) => {
+    const ia = PLAN_ORDER.indexOf(a.name);
+    const ib = PLAN_ORDER.indexOf(b.name);
+    return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
+  });
+
 const formatAr = (n) => new Intl.NumberFormat('fr-MG').format(n) + ' Ar';
+
+// Transforme "TVA, calcul fiscal, déclarations." ou "Comptabilité + Fiscalité + Durabilité"
+// en liste de points à cocher.
+const splitFeatures = (description) =>
+  description
+    .replace(/\.$/, '')
+    .split(/,|\+/)
+    .map((s) => s.trim())
+    .filter(Boolean);
+
+const CheckIcon = ({ color }) => (
+  <svg viewBox="0 0 24 24" className="w-4 h-4 mt-0.5 flex-shrink-0">
+    <path d="M5 13l4 4L19 7" stroke={color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+  </svg>
+);
+
+const FeatureList = ({ description, iconColor, textColor }) => (
+  <ul className="text-sm mb-6 flex-1 space-y-2">
+    {splitFeatures(description).map((feature) => (
+      <li key={feature} className="flex items-start gap-2">
+        <CheckIcon color={iconColor} />
+        <span style={{ color: textColor }}>{feature}</span>
+      </li>
+    ))}
+  </ul>
+);
 
 export default function Pricing() {
   const [headerRef, headerVisible] = useInView(0.2);
@@ -52,11 +89,11 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="rounded-2xl bg-white p-3 md:p-4" style={{ boxShadow: '0 30px 60px -25px rgba(20,21,43,0.25)', border: '1px solid #EDECF6' }}>
+        <div className="rounded-2xl bg-white p-3 md:p-4" style={{ boxShadow: '0 30px 60px -25px rgba(20,21,43,0.25)', border: '1px solid #EDEDED' }}>
         <div className="flex items-center gap-2 px-2 py-2 mb-2">
-          <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#EDECF6' }} />
-          <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#EDECF6' }} />
-          <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#EDECF6' }} />
+          <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#EDEDED' }} />
+          <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#EDEDED' }} />
+          <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#EDEDED' }} />
           <span className="text-xs ml-2" style={{ color: 'var(--color-text-muted)' }}>app.finansys-compta.mg/abonnement</span>
         </div>
 
@@ -82,9 +119,11 @@ export default function Pricing() {
                 Gratuit
               </h3>
               <p className="text-2xl font-extrabold mb-3" style={{ color: 'var(--color-primary)' }}>0 Ar</p>
-              <p className="text-sm mb-6 flex-1" style={{ color: 'var(--color-text-muted)' }}>
-                Tableau de bord, utilisateurs, journal d'audit.
-              </p>
+              <FeatureList
+                description="Tableau de bord, utilisateurs, journal d'audit."
+                iconColor="var(--color-accent)"
+                textColor="var(--color-text-muted)"
+              />
               <a
                 href={registerUrl(null)}
                 className="text-center text-sm font-semibold px-4 py-2.5 rounded-lg transition"
@@ -94,7 +133,7 @@ export default function Pricing() {
               </a>
             </div>
 
-            {plans.map((plan, i) => {
+            {sortByPlanOrder(plans).map((plan, i) => {
               const featured = plan.name === 'complet';
               return (
                 <div
@@ -125,12 +164,11 @@ export default function Pricing() {
                     {formatAr(plan.price)}
                     <span className="text-sm font-medium"> /mois</span>
                   </p>
-                  <p
-                    className="text-sm mb-6 flex-1"
-                    style={{ color: featured ? 'rgba(255,255,255,0.85)' : 'var(--color-text-muted)' }}
-                  >
-                    {plan.description}
-                  </p>
+                  <FeatureList
+                    description={plan.description}
+                    iconColor={featured ? 'white' : 'var(--color-accent)'}
+                    textColor={featured ? 'rgba(255,255,255,0.85)' : 'var(--color-text-muted)'}
+                  />
                   <a
                     href={registerUrl(plan.name)}
                     className="text-center text-sm font-semibold px-4 py-2.5 rounded-lg transition"

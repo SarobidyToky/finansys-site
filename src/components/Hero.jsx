@@ -1,7 +1,5 @@
 import fr from '../content/fr';
-import BrowserFrame from './BrowserFrame';
-import dashboardImg from '../img/screenshots/dashboard.png';
-import dashboardFiscalImg from '../img/screenshots/dashboard-fiscal.png';
+import heroPhoto from '../img/hero-photo.png';
 import '../styles/animations.css';
 
 export default function Hero() {
@@ -9,22 +7,22 @@ export default function Hero() {
     <section
       id="hero"
       className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden"
-      style={{ background: 'linear-gradient(135deg, #1E2050 0%, #181A3D 45%, #0D0E22 100%)' }}
+      style={{ background: 'linear-gradient(135deg, #001F5C 0%, #001640 45%, #0A0E1A 100%)' }}
     >
       {/* Fond texturé maison : dégradé profond + formes douces + grille de points + courbes + graphique en filigrane */}
       <div className="absolute inset-0 -z-10">
         {/* Formes douces (blobs flous) */}
         <div
           className="absolute -top-24 -left-16 w-[420px] h-[420px] rounded-full opacity-25 blur-3xl"
-          style={{ background: 'radial-gradient(circle, rgba(120,124,220,0.55), transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, rgba(0,51,153,0.55), transparent 70%)' }}
         />
         <div
           className="absolute top-1/3 -right-24 w-[380px] h-[380px] rounded-full opacity-20 blur-3xl"
-          style={{ background: 'radial-gradient(circle, rgba(245,180,0,0.4), transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, rgba(22,184,78,0.4), transparent 70%)' }}
         />
         <div
           className="absolute bottom-0 left-1/4 w-[320px] h-[320px] rounded-full opacity-[0.12] blur-3xl"
-          style={{ background: 'radial-gradient(circle, rgba(31,157,85,0.5), transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, rgba(22,184,78,0.5), transparent 70%)' }}
         />
 
         {/* Grille de points */}
@@ -76,33 +74,22 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative animate-fade-up hidden lg:block" style={{ animationDelay: '0.15s' }}>
-          {/* Capture secondaire, décalée derrière — donne de la profondeur */}
-          <div className="absolute -top-10 -right-6 w-[78%] opacity-90 rotate-3">
-            <BrowserFrame src={dashboardFiscalImg} alt="Dashboard fiscal FinanSys" />
-          </div>
-
-          {/* Capture principale */}
-          <div className="relative -rotate-2">
-            <BrowserFrame src={dashboardImg} alt="Tableau de bord FinanSys" />
+        <div className="relative animate-fade-up" style={{ animationDelay: '0.15s' }}>
+          <div className="rounded-2xl overflow-hidden" style={{ boxShadow: '0 30px 60px -20px rgba(0,0,0,0.5)' }}>
+            <img src={heroPhoto} alt="Utilisatrice présentant le tableau de bord FinanSys" className="w-full h-auto block" />
           </div>
 
           <div
-            className="absolute -bottom-6 -left-8 bg-white rounded-2xl px-4 py-3 items-center gap-3 hidden sm:flex"
+            className="absolute -bottom-6 -left-4 sm:-left-8 bg-white rounded-2xl px-4 py-3 items-center gap-3 hidden sm:flex"
             style={{ boxShadow: '0 20px 40px -10px rgba(0,0,0,0.4)' }}
           >
-            <span className="flex items-center justify-center w-8 h-8 rounded-full" style={{ backgroundColor: 'rgba(31,157,85,0.12)' }}>
+            <span className="flex items-center justify-center w-8 h-8 rounded-full" style={{ backgroundColor: 'rgba(22,184,78,0.12)' }}>
               <svg viewBox="0 0 24 24" className="w-4 h-4">
                 <path d="M5 13l4 4L19 7" stroke="var(--color-accent)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
               </svg>
             </span>
             <span className="text-sm font-semibold" style={{ color: 'var(--color-ink)' }}>{fr.hero.badge}</span>
           </div>
-        </div>
-
-        {/* Version mobile : une seule capture, sans rotation/superposition */}
-        <div className="relative animate-fade-up lg:hidden" style={{ animationDelay: '0.15s' }}>
-          <BrowserFrame src={dashboardImg} alt="Tableau de bord FinanSys" />
         </div>
       </div>
     </section>

@@ -35,7 +35,7 @@ export default function Testimonials() {
               <div
                 key={t.name}
                 className={`reveal ${gridVisible ? 'reveal-visible' : ''} rounded-2xl p-6`}
-                style={{ transitionDelay: `${(i + 1) * 0.1}s`, border: '1px solid #EAE9F3' }}
+                style={{ transitionDelay: `${(i + 1) * 0.1}s`, border: '1px solid #EDEDED' }}
               >
                 <p className="text-sm mb-5" style={{ color: 'var(--color-text)' }}>« {t.quote} »</p>
                 <div>

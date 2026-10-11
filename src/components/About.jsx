@@ -24,7 +24,7 @@ export default function About() {
 
         <div ref={cardsRef} className="flex flex-col gap-5">
           {fr.apropos.values.map((value, i) => (
-            <div key={value.title} className={`reveal-card ${cardsVisible ? 'reveal-card-visible' : ''} bg-white rounded-2xl p-6 flex items-start gap-4`} style={{ transitionDelay: `${i * 0.15}s`, boxShadow: '0 10px 30px -15px rgba(59,63,161,0.15)' }}>
+            <div key={value.title} className={`reveal-card ${cardsVisible ? 'reveal-card-visible' : ''} bg-white rounded-2xl p-6 flex items-start gap-4`} style={{ transitionDelay: `${i * 0.15}s`, boxShadow: '0 10px 30px -15px rgba(0,51,153,0.15)' }}>
               <span className="flex items-center justify-center w-10 h-10 rounded-full font-bold text-white shrink-0" style={{ backgroundColor: 'var(--color-primary)' }}>
                 {i + 1}
               </span>

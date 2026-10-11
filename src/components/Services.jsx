@@ -70,7 +70,7 @@ export default function Services() {
               to={`/services/${item.slug}`}
               key={item.title}
               className={`reveal ${gridVisible ? 'reveal-visible' : ''} rounded-2xl p-6 transition-all hover:-translate-y-1 block bg-white group`}
-              style={{ transitionDelay: `${i * 0.1}s`, border: '1px solid #EAE9F3' }}
+              style={{ transitionDelay: `${i * 0.1}s`, border: '1px solid #EDEDED' }}
             >
               <span className="flex items-center justify-center w-11 h-11 rounded-lg mb-5" style={{ color: 'var(--color-primary)' }}>
                 <svg viewBox="0 0 24 24" className="w-7 h-7">

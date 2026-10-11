@@ -91,7 +91,7 @@ export default function Advantages() {
               className={`reveal ${gridVisible ? 'reveal-visible' : ''} rounded-2xl p-6 bg-white`}
               style={{ transitionDelay: `${i * 0.1}s` }}
             >
-              <span className="flex items-center justify-center w-10 h-10 rounded-xl mb-4" style={{ backgroundColor: 'rgba(59,63,161,0.1)', color: 'var(--color-primary)' }}>
+              <span className="flex items-center justify-center w-10 h-10 rounded-xl mb-4" style={{ backgroundColor: 'rgba(0,51,153,0.1)', color: 'var(--color-primary)' }}>
                 <Icon name={item.icon} className="w-5 h-5" />
               </span>
               <h3 className="font-bold text-base mb-1" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
