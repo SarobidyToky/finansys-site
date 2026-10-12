@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import Hero from './Hero';
 import Responsive from './Responsive';
 import About from './About';
+import Founder from './Founder';
 import Services from './Services';
 import Platform from './Platform';
 import Pricing from './Pricing';
@@ -29,6 +30,7 @@ export default function Home() {
       <Hero />
       <Responsive />
       <About />
+      <Founder />
       <Services />
       <Platform />
       <Pricing />

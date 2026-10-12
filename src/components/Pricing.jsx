@@ -4,29 +4,51 @@ import '../styles/animations.css';
 
 const PLAN_ICONS = {
   gratuit: <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"><path d="M12 3a9 9 0 109 9h-9V3z" /><path d="M15 3.5A9 9 0 0120.5 9H15V3.5z" /></g>,
-  fiscalite: <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"><path d="M12 3v18M7 7h10M4 7l3-3 3 3-3 5-3-5zM14 7l3-3 3 3-3 5-3-5z" /></g>,
-  durabilite: <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"><path d="M5 21c9 0 14-5 14-14V4h-3C7 4 5 9 5 15v6zM5 21c3-5 7-9 12-11" /></g>,
-  comptabilite: <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"><rect x="2.5" y="6" width="19" height="12" rx="2" /><circle cx="12" cy="12" r="3" /></g>,
-  complet: <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"><path d="M12 2l2.6 6.6L21 11l-6.4 2.4L12 20l-2.6-6.6L3 11l6.4-2.4z" /></g>,
+  essentiel: <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"><rect x="2.5" y="6" width="19" height="12" rx="2" /><circle cx="12" cy="12" r="3" /></g>,
+  conformite: <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"><path d="M12 3v18M7 7h10M4 7l3-3 3 3-3 5-3-5zM14 7l3-3 3 3-3 5-3-5z" /></g>,
+  impact: <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"><path d="M5 21c9 0 14-5 14-14V4h-3C7 4 5 9 5 15v6zM5 21c3-5 7-9 12-11" /></g>,
+  excellence: <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"><path d="M12 2l2.6 6.6L21 11l-6.4 2.4L12 20l-2.6-6.6L3 11l6.4-2.4z" /></g>,
 };
 const PlanIcon = ({ name, color }) => (
   <span className="flex items-center justify-center w-11 h-11 rounded-lg mb-4" style={{ color, backgroundColor: color === 'white' ? 'rgba(255,255,255,0.15)' : 'rgba(0,51,153,0.1)' }}>
-    <svg viewBox="0 0 24 24" className="w-6 h-6">{PLAN_ICONS[name] || PLAN_ICONS.comptabilite}</svg>
+    <svg viewBox="0 0 24 24" className="w-6 h-6">{PLAN_ICONS[name] || PLAN_ICONS.essentiel}</svg>
   </span>
 );
 
 const APP_URL = 'https://app.finansys-compta.mg';
 
-// Ordre d'affichage voulu : Comptabilité - Fiscalité - Durabilité - Pack complet.
-// L'API renvoie les packs payants dans un ordre qui n'est pas garanti, donc on
-// trie ici plutôt que de dépendre de l'ordre côté backend.
-const PLAN_ORDER = ['comptabilite', 'fiscalite', 'durabilite', 'complet'];
-const sortByPlanOrder = (plans) =>
-  [...plans].sort((a, b) => {
-    const ia = PLAN_ORDER.indexOf(a.name);
-    const ib = PLAN_ORDER.indexOf(b.name);
-    return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
-  });
+// Offres commerciales affichées sur le site, chacune composée d'un ou
+// plusieurs packs RÉELS tels que renvoyés par l'API (comptabilite, fiscalite,
+// durabilite). Le nom affiché ("Essentiel", "Conformité"...) est purement
+// un habillage marketing : aucun pack "essentiel" n'existe côté backend.
+// Le prix n'est jamais codé en dur ici : il est toujours recalculé en
+// sommant les packs réels, pour rester synchronisé avec le backend.
+const OFFERS = [
+  { name: 'essentiel', label: 'Essentiel', includes: ['comptabilite'] },
+  { name: 'conformite', label: 'Conformité', includes: ['comptabilite', 'fiscalite'] },
+  { name: 'impact', label: 'Impact', includes: ['comptabilite', 'durabilite'] },
+  { name: 'excellence', label: 'Excellence', includes: ['comptabilite', 'fiscalite', 'durabilite'] },
+];
+
+// Construit les 4 offres à afficher à partir des packs bruts de l'API.
+// Si un pack attendu est absent côté API (ex: renommé), l'offre correspondante
+// est simplement omise plutôt que d'afficher un prix faux.
+const buildOffers = (rawPlans) =>
+  OFFERS.map((offer) => {
+    const parts = offer.includes
+      .map((name) => rawPlans.find((p) => p.name === name))
+      .filter(Boolean);
+    if (parts.length !== offer.includes.length) return null;
+    return {
+      id: offer.name,
+      name: offer.name,
+      label: offer.label,
+      price: parts.reduce((sum, p) => sum + p.price, 0),
+      description: parts.map((p) => p.description.replace(/\.$/, '')).join(', ') + '.',
+      // Noms des packs réels à transmettre à l'inscription, ex: "comptabilite,fiscalite"
+      registerPackNames: offer.includes.join(','),
+    };
+  }).filter(Boolean);
 
 const formatAr = (n) => new Intl.NumberFormat('fr-MG').format(n) + ' Ar';
 
@@ -74,8 +96,8 @@ export default function Pricing() {
       .finally(() => setLoading(false));
   }, []);
 
-  const registerUrl = (packName) =>
-    packName ? `${APP_URL}/register?packs=${packName}` : `${APP_URL}/register`;
+  const registerUrl = (packNames) =>
+    packNames ? `${APP_URL}/register?packs=${packNames}` : `${APP_URL}/register`;
 
   return (
     <section id="offres" className="py-20 md:py-28" style={{ backgroundColor: 'var(--color-bg-soft)' }}>
@@ -133,8 +155,8 @@ export default function Pricing() {
               </a>
             </div>
 
-            {sortByPlanOrder(plans).map((plan, i) => {
-              const featured = plan.name === 'complet';
+            {buildOffers(plans).map((plan, i) => {
+              const featured = plan.name === 'excellence';
               return (
                 <div
                   key={plan.id}
@@ -170,7 +192,7 @@ export default function Pricing() {
                     textColor={featured ? 'rgba(255,255,255,0.85)' : 'var(--color-text-muted)'}
                   />
                   <a
-                    href={registerUrl(plan.name)}
+                    href={registerUrl(plan.registerPackNames)}
                     className="text-center text-sm font-semibold px-4 py-2.5 rounded-lg transition"
                     style={
                       featured
