@@ -10,7 +10,7 @@ const fr = {
     label: 'Nous contacter',
   },
   hero: {
-    title: 'La comptabilité digitale et durable, pour les entrepreneurs malgaches',
+    title: 'La comptabilité digitale et durable, pensée pour les entrepreneurs malgaches',
     subtitle: "Centralisez vos données financières, suivez votre trésorerie et faites-vous accompagner par une équipe qui connaît le contexte malgache.",
     ctaPrimary: 'Prendre rendez-vous',
     ctaSecondary: 'Découvrir nos services',
@@ -47,7 +47,7 @@ const fr = {
     //   https://www.youtube.com/watch?v=JQveReuEqSA  (Le bilan comptable en 6 min, L'Expert-Comptable)
     //   https://www.youtube.com/watch?v=NhyNcnuKq8o  (Le compte de résultat en 10 min, Indy)
     video: {
-      url: '/video/presentation.mp4',
+      url: 'https://www.youtube.com/watch?v=vYb976KGH3w',
       title: 'La comptabilité, simplement',
       description: 'Les bases pour mieux comprendre et piloter vos chiffres.',
     },
@@ -55,10 +55,9 @@ const fr = {
       { icon: 'chart-pie', slug: 'tableau-de-bord', title: 'Tableau de bord', description: "Une vue claire et centralisée de votre santé financière.", bullets: ['Chiffre d\'affaires, charges et résultat en un coup d\'œil', 'Graphiques d\'évolution sur 12 mois'] },
       { icon: 'cash', slug: 'tresorerie', title: 'Trésorerie', description: 'Suivi et anticipation de vos flux de trésorerie.', bullets: ['Comptes bancaires et caisse réunis', 'Rapprochement bancaire automatisé'] },
       { icon: 'report', slug: 'etats-financiers', title: 'États financiers', description: 'Bilans et rapports conformes, générés simplement.', bullets: ['Bilan, compte de résultat, grand livre', 'Export PDF et Excel en un clic'] },
-      { icon: 'school', slug: 'formation', title: 'Formation', description: "Des formations pour comprendre et piloter vos chiffres.", bullets: ['Prise en main accompagnée', 'Ateliers adaptés aux non-comptables'] },
       { icon: 'scale', slug: 'fiscalite', title: 'Fiscalité', description: 'Anticipez vos impôts et vos déclarations sans mauvaise surprise.', bullets: ['Calcul automatique TVA et IS', 'Suivi des déclarations et échéances'] },
+      { icon: 'school', slug: 'formation', title: 'Formation', description: "Des formations pour comprendre et piloter vos chiffres.", bullets: ['Prise en main accompagnée', 'Ateliers adaptés aux non-comptables'] },
       { icon: 'digital', slug: 'digitalisation', title: 'Digitalisation', description: 'Modernisez vos processus de gestion au quotidien.', bullets: ['Import bancaire, factures en ligne', 'Accès sécurisé depuis partout'] },
-      { icon: 'leaf', slug: 'comptabilite-durable', title: 'Comptabilité durable', description: "Mesurez l'impact économique, social et environnemental de votre activité.", bullets: ['Indicateurs ESG simples à suivre', "Rapport d'impact partageable"] },
     ],
   },
   plateforme: {

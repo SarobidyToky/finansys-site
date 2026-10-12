@@ -7,7 +7,7 @@ export default function Hero() {
   const count = useCountUp(fr.hero.statValue, 1600, 900);
 
   return (
-    <section id="hero" className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden" style={{ backgroundColor: 'var(--color-ink)' }}>
+    <section id="hero" className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden" style={{ backgroundColor: '#003399' }}>
       {/* Fond texturé maison : mesh gradient + grille de points + lignes de courbe fantômes */}
       <div className="absolute inset-0 -z-10">
         <div
