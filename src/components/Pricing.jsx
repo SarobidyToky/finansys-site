@@ -17,36 +17,30 @@ const PlanIcon = ({ name, color }) => (
 
 const APP_URL = 'https://app.finansys-compta.mg';
 
-// Offres commerciales affichées sur le site, chacune composée d'un ou
-// plusieurs packs RÉELS tels que renvoyés par l'API (comptabilite, fiscalite,
-// durabilite). Le nom affiché ("Essentiel", "Conformité"...) est purement
-// un habillage marketing : aucun pack "essentiel" n'existe côté backend.
-// Le prix n'est jamais codé en dur ici : il est toujours recalculé en
-// sommant les packs réels, pour rester synchronisé avec le backend.
-const OFFERS = [
-  { name: 'essentiel', label: 'Essentiel', includes: ['comptabilite'] },
-  { name: 'conformite', label: 'Conformité', includes: ['comptabilite', 'fiscalite'] },
-  { name: 'impact', label: 'Impact', includes: ['comptabilite', 'durabilite'] },
-  { name: 'excellence', label: 'Excellence', includes: ['comptabilite', 'fiscalite', 'durabilite'] },
-];
+// Les 4 packs réels (renvoyés par l'API) affichés sous un nom commercial
+// différent. Pas de somme ni de combinaison : chaque pack garde son propre
+// prix et son propre packId, tel que défini côté admin. C'est un simple
+// habillage d'étiquette — "Essentiel" est juste le nouveau nom du pack
+// "comptabilite", "Conformité" celui de "fiscalite", etc.
+const LABELS = {
+  comptabilite: 'Essentiel',
+  fiscalite: 'Conformité',
+  durabilite: 'Impact',
+  complet: 'Excellence',
+};
+const DISPLAY_ORDER = ['comptabilite', 'fiscalite', 'durabilite', 'complet'];
 
-// Construit les 4 offres à afficher à partir des packs bruts de l'API.
-// Si un pack attendu est absent côté API (ex: renommé), l'offre correspondante
-// est simplement omise plutôt que d'afficher un prix faux.
 const buildOffers = (rawPlans) =>
-  OFFERS.map((offer) => {
-    const parts = offer.includes
-      .map((name) => rawPlans.find((p) => p.name === name))
-      .filter(Boolean);
-    if (parts.length !== offer.includes.length) return null;
+  DISPLAY_ORDER.map((name) => {
+    const plan = rawPlans.find((p) => p.name === name);
+    if (!plan) return null;
     return {
-      id: offer.name,
-      name: offer.name,
-      label: offer.label,
-      price: parts.reduce((sum, p) => sum + p.price, 0),
-      description: parts.map((p) => p.description.replace(/\.$/, '')).join(', ') + '.',
-      // Noms des packs réels à transmettre à l'inscription, ex: "comptabilite,fiscalite"
-      registerPackNames: offer.includes.join(','),
+      id: plan.id,
+      name: plan.name,
+      label: LABELS[name] || plan.label,
+      price: plan.price,
+      description: plan.description,
+      registerPackNames: plan.name,
     };
   }).filter(Boolean);
 
@@ -156,7 +150,7 @@ export default function Pricing() {
             </div>
 
             {buildOffers(plans).map((plan, i) => {
-              const featured = plan.name === 'excellence';
+              const featured = plan.name === 'complet';
               return (
                 <div
                   key={plan.id}
