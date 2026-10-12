@@ -5,11 +5,9 @@ import Responsive from './Responsive';
 import About from './About';
 import Services from './Services';
 import Platform from './Platform';
-import Gallery from './Gallery';
 import Pricing from './Pricing';
 import Advantages from './Advantages';
 import Testimonials from './Testimonials';
-import Founder from './Founder';
 import Faq from './Faq';
 import ClosingCta from './ClosingCta';
 import Contact from './Contact';
@@ -33,11 +31,9 @@ export default function Home() {
       <About />
       <Services />
       <Platform />
-      <Gallery />
       <Pricing />
       <Advantages />
       <Testimonials />
-      <Founder />
       <Faq />
       <ClosingCta />
       <Contact />
