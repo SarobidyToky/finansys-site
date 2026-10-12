@@ -103,7 +103,7 @@ export default function Services() {
             className={`reveal ${gridVisible ? 'reveal-visible' : ''} lg:sticky lg:top-28`}
             style={{ transitionDelay: '0.2s' }}
           >
-            <VideoEmbed url={fr.services.video.url} title={fr.services.video.title} />
+            <VideoEmbed url={fr.services.video.url} title={fr.services.video.title} poster="/video/presentation-poster.jpg" />
             <div className="mt-5 px-1">
               <p className="font-bold text-lg" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-ink)' }}>
                 {fr.services.video.title}

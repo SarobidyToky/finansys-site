@@ -9,6 +9,7 @@ import Gallery from './Gallery';
 import Pricing from './Pricing';
 import Advantages from './Advantages';
 import Testimonials from './Testimonials';
+import Founder from './Founder';
 import Faq from './Faq';
 import ClosingCta from './ClosingCta';
 import Contact from './Contact';
@@ -36,6 +37,7 @@ export default function Home() {
       <Pricing />
       <Advantages />
       <Testimonials />
+      <Founder />
       <Faq />
       <ClosingCta />
       <Contact />

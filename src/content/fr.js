@@ -47,7 +47,7 @@ const fr = {
     //   https://www.youtube.com/watch?v=JQveReuEqSA  (Le bilan comptable en 6 min, L'Expert-Comptable)
     //   https://www.youtube.com/watch?v=NhyNcnuKq8o  (Le compte de résultat en 10 min, Indy)
     video: {
-      url: 'https://www.youtube.com/watch?v=vYb976KGH3w',
+      url: '/video/presentation.mp4',
       title: 'La comptabilité, simplement',
       description: 'Les bases pour mieux comprendre et piloter vos chiffres.',
     },
