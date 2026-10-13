@@ -47,7 +47,7 @@ const fr = {
     //   https://www.youtube.com/watch?v=JQveReuEqSA  (Le bilan comptable en 6 min, L'Expert-Comptable)
     //   https://www.youtube.com/watch?v=NhyNcnuKq8o  (Le compte de résultat en 10 min, Indy)
     video: {
-      url: 'https://www.youtube.com/watch?v=vYb976KGH3w',
+      url: '/video/presentation-finansys.mp4',
       title: 'La comptabilité, simplement',
       description: 'Les bases pour mieux comprendre et piloter vos chiffres.',
     },
@@ -154,7 +154,7 @@ const fr = {
     subtitle: "Une question, un projet ? Notre équipe vous répond sous 24h.",
     infos: [
       { label: 'Adresse', value: 'Fort-Dauphin, Madagascar' },
-      { label: 'Téléphone', value: '034 04 141 22 (à confirmer)' },
+      { label: 'Téléphone', value: '038 02 141 24' },
       { label: 'Email', value: 'contact@finansys.mg' },
     ],
     form: {

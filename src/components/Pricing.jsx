@@ -4,16 +4,56 @@ import '../styles/animations.css';
 
 const PLAN_ICONS = {
   gratuit: <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"><path d="M12 3a9 9 0 109 9h-9V3z" /><path d="M15 3.5A9 9 0 0120.5 9H15V3.5z" /></g>,
-  essentiel: <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"><rect x="2.5" y="6" width="19" height="12" rx="2" /><circle cx="12" cy="12" r="3" /></g>,
-  conformite: <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"><path d="M12 3v18M7 7h10M4 7l3-3 3 3-3 5-3-5zM14 7l3-3 3 3-3 5-3-5z" /></g>,
-  impact: <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"><path d="M5 21c9 0 14-5 14-14V4h-3C7 4 5 9 5 15v6zM5 21c3-5 7-9 12-11" /></g>,
-  excellence: <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"><path d="M12 2l2.6 6.6L21 11l-6.4 2.4L12 20l-2.6-6.6L3 11l6.4-2.4z" /></g>,
+  comptabilite: <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"><rect x="2.5" y="6" width="19" height="12" rx="2" /><circle cx="12" cy="12" r="3" /></g>,
+  fiscalite: <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"><path d="M12 3v18M7 7h10M4 7l3-3 3 3-3 5-3-5zM14 7l3-3 3 3-3 5-3-5z" /></g>,
+  durabilite: <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"><path d="M5 21c9 0 14-5 14-14V4h-3C7 4 5 9 5 15v6zM5 21c3-5 7-9 12-11" /></g>,
+  complet: <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"><path d="M12 2l2.6 6.6L21 11l-6.4 2.4L12 20l-2.6-6.6L3 11l6.4-2.4z" /></g>,
 };
 const PlanIcon = ({ name, color }) => (
   <span className="flex items-center justify-center w-11 h-11 rounded-lg mb-4" style={{ color, backgroundColor: color === 'white' ? 'rgba(255,255,255,0.15)' : 'rgba(0,51,153,0.1)' }}>
-    <svg viewBox="0 0 24 24" className="w-6 h-6">{PLAN_ICONS[name] || PLAN_ICONS.essentiel}</svg>
+    <svg viewBox="0 0 24 24" className="w-6 h-6">{PLAN_ICONS[name] || PLAN_ICONS.comptabilite}</svg>
   </span>
 );
+
+// Couleurs alignées sur les piliers de Platform.jsx (même code couleur partout sur le site)
+const DOMAIN_COLORS = {
+  Comptabilité: '#003399',
+  Fiscalité: '#DC2626',
+  Durabilité: '#16B84E',
+};
+
+// Composition affichée sous le nom du plan (seulement si plus d'un domaine,
+// "Essentiel" = Comptabilité seule n'a pas besoin de ce rappel).
+const COMPOSITION = {
+  comptabilite: null,
+  fiscalite: ['Comptabilité', 'Fiscalité'],
+  durabilite: ['Comptabilité', 'Durabilité'],
+  complet: ['Comptabilité', 'Fiscalité', 'Durabilité'],
+};
+
+const CompositionBadges = ({ domains, featured }) => {
+  if (!domains) return null;
+  return (
+    <div className="flex flex-wrap items-center gap-1.5 mb-3">
+      {domains.map((domain, i) => (
+        <span key={domain} className="flex items-center gap-1.5">
+          {i > 0 && (
+            <span className="text-xs font-semibold" style={{ color: featured ? 'rgba(255,255,255,0.5)' : 'var(--color-text-muted)' }}>+</span>
+          )}
+          <span
+            className="text-[11px] font-semibold px-2 py-0.5 rounded-full"
+            style={{
+              color: featured ? 'white' : DOMAIN_COLORS[domain],
+              backgroundColor: featured ? 'rgba(255,255,255,0.15)' : `${DOMAIN_COLORS[domain]}1A`,
+            }}
+          >
+            {domain}
+          </span>
+        </span>
+      ))}
+    </div>
+  );
+};
 
 const APP_URL = 'https://app.finansys-compta.mg';
 
@@ -176,6 +216,7 @@ export default function Pricing() {
                   >
                     {plan.label}
                   </h3>
+                  <CompositionBadges domains={COMPOSITION[plan.name]} featured={featured} />
                   <p className="text-2xl font-extrabold mb-3" style={{ color: featured ? 'white' : 'var(--color-primary)' }}>
                     {formatAr(plan.price)}
                     <span className="text-sm font-medium"> /mois</span>

@@ -30,12 +30,12 @@ export default function Home() {
       <Hero />
       <Responsive />
       <About />
-      <Founder />
       <Services />
       <Platform />
       <Pricing />
       <Advantages />
       <Testimonials />
+      <Founder />
       <Faq />
       <ClosingCta />
       <Contact />

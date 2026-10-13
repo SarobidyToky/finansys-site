@@ -21,7 +21,7 @@ export default function Founder() {
           <div className="relative inline-block mb-5">
             <img
               src={fondatriceImg}
-              alt="RAJAONARIVONY Laingo Fitiamanankery, fondatrice de FinanSys"
+              alt="RAJAONARIVONY Fitia, fondatrice de FinanSys"
               className="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover mx-auto"
               style={{ border: '4px solid var(--color-bg-soft)', boxShadow: '0 20px 40px -15px rgba(0,51,153,0.3)' }}
             />
@@ -39,7 +39,7 @@ export default function Founder() {
             className="text-xl md:text-2xl font-bold mb-1"
             style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-ink)' }}
           >
-            RAJAONARIVONY Laingo Fitiamanankery
+            RAJAONARIVONY Fitia
           </h3>
           <p
             className="text-xs font-semibold uppercase tracking-wider"
