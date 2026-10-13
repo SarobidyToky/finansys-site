@@ -31,8 +31,12 @@ export default function ClosingCta() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8">
             {partners.map((p) => (
-              <div key={p.name} className="bg-white rounded-2xl px-6 py-4 md:px-8 md:py-5">
-                <img src={p.logo} alt={p.name} className="h-14 md:h-16 w-auto object-contain" />
+              <div
+                key={p.name}
+                className="bg-white rounded-2xl flex items-center justify-center shrink-0"
+                style={{ width: '210px', height: '115px' }}
+              >
+                <img src={p.logo} alt={p.name} className="max-h-16 md:max-h-[4.5rem] max-w-[85%] object-contain" />
               </div>
             ))}
           </div>

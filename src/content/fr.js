@@ -53,6 +53,13 @@ const fr = {
       description: 'Les bases pour mieux comprendre et piloter vos chiffres.',
     },
     items: [
+      {
+        icon: 'leaf',
+        slug: 'comptabilite-durable',
+        title: 'Comptabilité durable',
+        description: "Intégrez les dimensions économique, sociale et environnementale dans votre gestion.",
+        bullets: ['Suivi économique, social et environnemental', "Rapports d'impact simples à partager"],
+      },
       { icon: 'chart-pie', slug: 'tableau-de-bord', title: 'Tableau de bord', description: "Une vue claire et centralisée de votre santé financière.", bullets: ['Chiffre d\'affaires, charges et résultat en un coup d\'œil', 'Graphiques d\'évolution sur 12 mois'] },
       { icon: 'cash', slug: 'tresorerie', title: 'Trésorerie', description: 'Suivi et anticipation de vos flux de trésorerie.', bullets: ['Comptes bancaires et caisse réunis', 'Rapprochement bancaire automatisé'] },
       { icon: 'report', slug: 'etats-financiers', title: 'États financiers', description: 'Bilans et rapports conformes, générés simplement.', bullets: ['Bilan, compte de résultat, grand livre', 'Export PDF et Excel en un clic'] },
