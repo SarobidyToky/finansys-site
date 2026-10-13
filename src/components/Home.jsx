@@ -12,6 +12,7 @@ import Testimonials from './Testimonials';
 import Faq from './Faq';
 import ClosingCta from './ClosingCta';
 import Contact from './Contact';
+import Blog from './Blog';
 
 export default function Home() {
   const location = useLocation();
@@ -37,6 +38,7 @@ export default function Home() {
       <Testimonials />
       <Founder />
       <Faq />
+      <Blog />
       <ClosingCta />
       <Contact />
     </>

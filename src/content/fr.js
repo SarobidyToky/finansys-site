@@ -4,6 +4,7 @@ const fr = {
     { label: 'À propos', href: '/#apropos' },
     { label: 'Services', href: '/#services' },
     { label: 'Avantages', href: '/#avantages' },
+    { label: 'Blog', href: '/#blog' },
     { label: 'Contact', href: '/#contact' },
   ],
   cta: {

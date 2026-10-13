@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import ServicePage from './components/ServicePage';
 import Footer from './components/Footer';
+import BlogPost from './components/BlogPost';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -19,6 +20,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/services/:slug" element={<ServicePage />} />
+              <Route path="/blog/:fileId" element={<BlogPost />} />
             </Routes>
             <Footer />
           </div>
