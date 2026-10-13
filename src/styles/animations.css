@@ -88,3 +88,22 @@
     stroke-dashoffset: 0 !important;
   }
 }
+
+.title-slide {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.title-slide-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title-slide {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

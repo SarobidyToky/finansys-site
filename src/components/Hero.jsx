@@ -1,11 +1,8 @@
 import fr from '../content/fr';
-import useCountUp from '../hooks/useCountUp';
 import heroWomanImg from '../assets/hero-woman.png';
 import '../styles/animations.css';
 
 export default function Hero() {
-  const count = useCountUp(fr.hero.statValue, 1600, 900);
-
   return (
     <section id="hero" className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden" style={{ backgroundColor: '#003399' }}>
       {/* Fond texturé maison : mesh gradient + grille de points + lignes de courbe fantômes */}
@@ -39,30 +36,13 @@ export default function Hero() {
           <p className="text-lg mb-9 max-w-md" style={{ color: 'rgba(255,255,255,0.68)' }}>
             {fr.hero.subtitle}
           </p>
-          <div className="flex flex-wrap gap-4 mb-14">
+          <div className="flex flex-wrap gap-4">
             <a href="#contact" className="px-7 py-3 rounded-full font-semibold transition-transform hover:scale-105" style={{ backgroundColor: '#FFD54A', color: '#003399' }}>
               {fr.hero.ctaPrimary}
             </a>
             <a href="#services" className="px-7 py-3 rounded-full font-semibold border-2 transition-colors hover:bg-white/10" style={{ borderColor: 'rgba(255,255,255,0.4)', color: 'white' }}>
               {fr.hero.ctaSecondary}
             </a>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-6 max-w-lg">
-            <div>
-              <div className="text-3xl font-extrabold" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-secondary)' }}>
-                +{count}{fr.hero.statSuffix}
-              </div>
-              <div className="text-xs mt-1" style={{ color: 'rgba(255,255,255,0.55)' }}>{fr.hero.statLabel}</div>
-            </div>
-            {fr.stats.items.map((s) => (
-              <div key={s.label}>
-                <div className="text-3xl font-extrabold" style={{ fontFamily: 'var(--font-heading)', color: 'white' }}>
-                  {s.value}{s.suffix}
-                </div>
-                <div className="text-xs mt-1" style={{ color: 'rgba(255,255,255,0.55)' }}>{s.label}</div>
-              </div>
-            ))}
           </div>
         </div>
 

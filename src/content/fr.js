@@ -10,7 +10,7 @@ const fr = {
     label: 'Nous contacter',
   },
   hero: {
-    title: 'La comptabilité digitale et durable, pensée pour les entrepreneurs malgaches',
+    title: 'La comptabilité digitale et durable, pour les entrepreneurs malagasy',
     subtitle: "Centralisez vos données financières, suivez votre trésorerie et faites-vous accompagner par une équipe qui connaît le contexte malgache.",
     ctaPrimary: 'Prendre rendez-vous',
     ctaSecondary: 'Découvrir nos services',

@@ -71,16 +71,16 @@ export default function Advantages() {
           to="/services/comptabilite-durable"
           ref={featuredRef}
           className={`reveal ${featuredVisible ? 'reveal-visible' : ''} rounded-2xl p-7 mb-8 flex items-start gap-4 transition-transform hover:-translate-y-1`}
-          style={{ backgroundColor: 'rgba(34,197,94,0.1)', border: '2px solid var(--color-accent)' }}
+          style={{ backgroundColor: 'var(--color-accent)' }}
         >
-          <span className="flex items-center justify-center w-12 h-12 rounded-xl shrink-0" style={{ backgroundColor: 'rgba(34,197,94,0.2)', color: 'var(--color-accent)' }}>
+          <span className="flex items-center justify-center w-12 h-12 rounded-xl shrink-0" style={{ backgroundColor: 'rgba(255,255,255,0.15)', color: '#FFD54A' }}>
             <Icon name={fr.avantages.featured.icon} className="w-6 h-6" />
           </span>
           <div>
-            <h3 className="font-bold text-lg mb-1" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
+            <h3 className="font-bold text-lg mb-1" style={{ fontFamily: 'var(--font-heading)', color: 'white' }}>
               {fr.avantages.featured.title}
             </h3>
-            <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>{fr.avantages.featured.description}</p>
+            <p className="text-sm" style={{ color: 'rgba(255,255,255,0.85)' }}>{fr.avantages.featured.description}</p>
           </div>
         </Link>
 

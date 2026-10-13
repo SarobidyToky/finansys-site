@@ -27,12 +27,12 @@ export default function Platform() {
   const [ref, visible] = useInView(0.2);
 
   return (
-    <section className="py-20 md:py-28" style={{ backgroundColor: 'var(--color-ink)' }}>
+    <section className="py-20 md:py-28" style={{ backgroundColor: 'var(--color-primary)' }}>
       <div ref={ref} className="max-w-6xl mx-auto px-6">
         <div className={`reveal ${visible ? 'reveal-visible' : ''} grid lg:grid-cols-[0.85fr_1.15fr] gap-14 items-center`}>
           <div>
             <h2
-              className="text-3xl md:text-[2.6rem] font-extrabold leading-[1.1] mb-5"
+              className={`title-slide ${visible ? 'title-slide-visible' : ''} text-3xl md:text-[2.6rem] font-extrabold leading-[1.1] mb-5`}
               style={{ fontFamily: 'var(--font-heading)', color: 'white' }}
             >
               {fr.plateforme.title}

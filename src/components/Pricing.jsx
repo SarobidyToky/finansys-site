@@ -25,7 +25,7 @@ const DOMAIN_COLORS = {
 // Composition affichée sous le nom du plan (seulement si plus d'un domaine,
 // "Essentiel" = Comptabilité seule n'a pas besoin de ce rappel).
 const COMPOSITION = {
-  comptabilite: null,
+  comptabilite: ['Comptabilité'],
   fiscalite: ['Comptabilité', 'Fiscalité'],
   durabilite: ['Comptabilité', 'Durabilité'],
   complet: ['Comptabilité', 'Fiscalité', 'Durabilité'],
@@ -174,6 +174,7 @@ export default function Pricing() {
               <h3 className="font-bold text-lg mb-1" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
                 Gratuit
               </h3>
+              <div className="mb-3" style={{ height: '22px' }} aria-hidden="true" />
               <p className="text-2xl font-extrabold mb-3" style={{ color: 'var(--color-primary)' }}>0 Ar</p>
               <FeatureList
                 description="Tableau de bord, utilisateurs, journal d'audit."
