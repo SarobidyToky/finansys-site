@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import fr from '../content/fr';
 import logoNavbar from '../assets/logo-navbar.png';
+import { REGISTER_URL } from '../config/appUrl';
 
 const NAV_BG = '#FFFFFF';
 const NAV_BLUE = '#003399';
@@ -24,7 +25,7 @@ export default function Navbar() {
               <span className="absolute left-0 -bottom-1 w-0 h-0.5 transition-all duration-300 group-hover:w-full" style={{ backgroundColor: NAV_GREEN }} />
             </a>
           ))}
-          <a href={fr.nav[fr.nav.length - 1].href} className="px-5 py-2 rounded-full font-semibold text-white transition-transform hover:scale-105" style={{ backgroundColor: NAV_GREEN }}>
+          <a href={REGISTER_URL} className="px-5 py-2 rounded-full font-semibold text-white transition-transform hover:scale-105" style={{ backgroundColor: NAV_GREEN }}>
             {fr.cta.label}
           </a>
         </div>
@@ -43,7 +44,7 @@ export default function Navbar() {
               {item.label}
             </a>
           ))}
-          <a href={fr.nav[fr.nav.length - 1].href} className="px-5 py-2 rounded-full font-semibold text-white text-center" style={{ backgroundColor: NAV_GREEN }} onClick={() => setMenuOpen(false)}>
+          <a href={REGISTER_URL} className="px-5 py-2 rounded-full font-semibold text-white text-center" style={{ backgroundColor: NAV_GREEN }} onClick={() => setMenuOpen(false)}>
             {fr.cta.label}
           </a>
         </div>

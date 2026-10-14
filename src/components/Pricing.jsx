@@ -55,7 +55,7 @@ const CompositionBadges = ({ domains, featured }) => {
   );
 };
 
-const APP_URL = 'https://app.finansys-compta.mg';
+import { APP_URL } from '../config/appUrl';
 
 // Les 4 packs réels (renvoyés par l'API) affichés sous un nom commercial
 // différent. Pas de somme ni de combinaison : chaque pack garde son propre

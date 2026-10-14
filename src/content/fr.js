@@ -5,7 +5,6 @@ const fr = {
     { label: 'Services', href: '/#services' },
     { label: 'Avantages', href: '/#avantages' },
     { label: 'Blog', href: '/#blog' },
-    { label: 'Contact', href: '/#contact' },
   ],
   cta: {
     label: 'Nous contacter',
@@ -163,7 +162,7 @@ const fr = {
     infos: [
       { label: 'Adresse', value: 'Fort-Dauphin, Madagascar' },
       { label: 'Téléphone', value: '038 02 141 24' },
-      { label: 'Email', value: 'contact@finansys.mg' },
+      { label: 'Email', value: 'contact@finansys-compta.mg' },
     ],
     form: {
       nameLabel: 'Nom complet',

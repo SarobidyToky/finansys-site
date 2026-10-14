@@ -1,6 +1,7 @@
 import fr from '../content/fr';
 import heroWomanImg from '../assets/hero-woman.png';
 import '../styles/animations.css';
+import { REGISTER_URL } from '../config/appUrl';
 
 export default function Hero() {
   return (
@@ -37,7 +38,7 @@ export default function Hero() {
             {fr.hero.subtitle}
           </p>
           <div className="flex flex-wrap gap-4">
-            <a href="#contact" className="px-7 py-3 rounded-full font-semibold transition-transform hover:scale-105" style={{ backgroundColor: '#FFD54A', color: '#003399' }}>
+            <a href={REGISTER_URL} className="px-7 py-3 rounded-full font-semibold transition-transform hover:scale-105" style={{ backgroundColor: '#FFD54A', color: '#003399' }}>
               {fr.hero.ctaPrimary}
             </a>
             <a href="#services" className="px-7 py-3 rounded-full font-semibold border-2 transition-colors hover:bg-white/10" style={{ borderColor: 'rgba(255,255,255,0.4)', color: 'white' }}>

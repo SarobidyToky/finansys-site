@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import services from '../content/services';
+import { REGISTER_URL } from '../config/appUrl';
 
 function ChevronIcon({ open }) {
   return (
@@ -178,13 +179,13 @@ export default function ServicePage() {
           <p className="text-lg font-semibold mb-5" style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text)' }}>
             {data.cta}
           </p>
-          <Link
-            to="/#contact"
+          <a
+            href={REGISTER_URL}
             className="inline-block px-7 py-3 rounded-full font-semibold text-white transition-transform hover:scale-105"
             style={{ backgroundColor: 'var(--color-primary)' }}
           >
             Prendre rendez-vous
-          </Link>
+          </a>
         </div>
       </div>
     </div>

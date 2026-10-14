@@ -1,5 +1,6 @@
 import fr from '../content/fr';
 import partners from '../content/partners';
+import { REGISTER_URL } from '../config/appUrl';
 
 export default function ClosingCta() {
   return (
@@ -15,7 +16,7 @@ export default function ClosingCta() {
           {fr.closingCta.text}
         </p>
         <a
-          href="#contact"
+          href={REGISTER_URL}
           className="inline-block px-8 py-3.5 rounded-full font-semibold transition-transform hover:scale-105"
           style={{ backgroundColor: 'var(--color-secondary)', color: 'var(--color-ink)' }}
         >
